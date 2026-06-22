@@ -1,10 +1,8 @@
+import { siteContact } from "@/config/siteContact";
 import Image from "next/image";
 import Link from "next/link";
-import { siteContact } from "@/config/siteContact";
 import {
-  BsApple,
   BsFacebook,
-  BsGooglePlay,
   BsInstagram,
   BsTwitterX,
   BsWhatsapp,
@@ -105,38 +103,6 @@ const Footer = () => {
             <p className="mt-6 max-w-[280px] text-[16px] leading-7 text-[var(--brand-blue)]/65">
               Discover, plan and go—your next remarkable journey starts here.
             </p>
-            <div className="mt-6 grid max-w-[276px] gap-3">
-              <a
-                href="#"
-                className="group flex min-h-[52px] items-center justify-between rounded-full border border-[var(--brand-blue)]/15 bg-white/35 py-1 pl-5 pr-1 text-[16px] font-[700] transition hover:border-[var(--brand-green)] hover:bg-white"
-              >
-                <span className="flex items-center gap-3">
-                  <BsGooglePlay
-                    className="text-[19px] text-[var(--brand-green)]"
-                    aria-hidden="true"
-                  />
-                  Google Play
-                </span>
-                <span className="flex size-10 items-center justify-center rounded-full bg-[var(--brand-blue)]/8 text-[19px] text-[var(--brand-green)] transition group-hover:bg-[var(--brand-green)] group-hover:text-white">
-                  <FiArrowRight aria-hidden="true" />
-                </span>
-              </a>
-              <a
-                href="#"
-                className="group flex min-h-[52px] items-center justify-between rounded-full border border-[var(--brand-blue)]/15 bg-white/35 py-1 pl-5 pr-1 text-[16px] font-[700] transition hover:border-[var(--brand-green)] hover:bg-white"
-              >
-                <span className="flex items-center gap-3">
-                  <BsApple
-                    className="text-[20px] text-[var(--brand-blue)]"
-                    aria-hidden="true"
-                  />
-                  App Store
-                </span>
-                <span className="flex size-10 items-center justify-center rounded-full bg-[var(--brand-blue)]/8 text-[19px] text-[var(--brand-green)] transition group-hover:bg-[var(--brand-green)] group-hover:text-white">
-                  <FiArrowRight aria-hidden="true" />
-                </span>
-              </a>
-            </div>
           </div>
 
           <div>
