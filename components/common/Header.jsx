@@ -1,22 +1,24 @@
 "use client";
 
-import { siteContact } from "@/config/siteContact";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FiMenu, FiPhoneCall, FiX } from "react-icons/fi";
 import TopBar from "./TopBar";
+import { useCurrentServiceContact } from "./useCurrentServiceContact";
 
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Car Rental", href: "/car-rental" },
   { label: "Trains", href: "/train-booking" },
+  { label: "Hotels", href: "/hotels" },
   { label: "About", href: "/about-us" },
   { label: "Contact", href: "/contact-us" },
 ];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const currentContact = useCurrentServiceContact();
 
   return (
     <header className="relative z-30 bg-white">
@@ -27,11 +29,11 @@ const Header = () => {
           <Link
             href="/"
             className="flex shrink-0 items-center"
-            aria-label="Sea Sky Solutions home"
+            aria-label="Sea Sky Solutions LLC home"
           >
             <Image
               src="/images/logo.png"
-              alt="Sea Sky Solutions"
+              alt="Sea Sky Solutions LLC"
               width={250}
               height={50}
               priority
@@ -56,15 +58,15 @@ const Header = () => {
 
           <div className="flex items-center gap-3">
             <a
-              href={siteContact.phone.href}
+              href={currentContact.phone.href}
               className="hidden min-h-[58px] items-center justify-center gap-3 rounded-full border border-[var(--brand-blue)]/10 bg-[var(--brand-blue)]/5 px-4 text-[15px] font-[700] text-[var(--brand-blue)] transition-colors hover:border-[var(--brand-green)] hover:text-[var(--brand-green)] sm:flex lg:min-h-[66px] lg:px-5 lg:text-[18px]"
-              aria-label={`Call toll free number ${siteContact.phone.display}`}
+              aria-label={`Call toll free number ${currentContact.phone.display}`}
             >
               <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-green)] text-[20px] text-white lg:size-11">
                 <FiPhoneCall aria-hidden="true" />
               </span>
               <span className="whitespace-nowrap leading-none">
-                {siteContact.phone.display}
+                {currentContact.phone.display}
               </span>
             </a>
 
@@ -107,7 +109,7 @@ const Header = () => {
             ))}
 
             <a
-              href={siteContact.phone.href}
+              href={currentContact.phone.href}
               className="mt-5 flex min-h-[52px] w-full items-center justify-center gap-3 rounded-full border border-[var(--brand-blue)]/15 bg-[var(--brand-blue)]/5 px-5 text-[17px] font-[800] text-[var(--brand-blue)]"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -115,7 +117,7 @@ const Header = () => {
                 <FiPhoneCall aria-hidden="true" />
               </span>
               <span className="whitespace-nowrap">
-                {siteContact.phone.display}
+                {currentContact.phone.display}
               </span>
             </a>
           </nav>

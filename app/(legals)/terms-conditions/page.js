@@ -5,7 +5,7 @@ import { createPageMetadata } from "@/config/siteMetadata";
 export const metadata = createPageMetadata({
   title: "Terms & Conditions",
   description:
-    "Read the terms and conditions for using Sea Sky Solutions travel planning and booking services.",
+    "Read the terms and conditions for using Sea Sky Solutions LLC travel planning and booking services.",
   path: "/terms-conditions",
   keywords: ["travel terms and conditions", "booking terms"],
 });
@@ -13,7 +13,7 @@ export const metadata = createPageMetadata({
 const TermsPage = () => (
   <LegalPageLayout title="Terms & Conditions" eyebrow="Booking with confidence">
     <p><strong>Last updated:</strong> June 20, 2026</p>
-    <p>These Terms & Conditions govern your use of the Sea Sky Solutions website and the travel planning or booking support we provide. By using this website or requesting travel services, you agree to these terms.</p>
+    <p>These Terms & Conditions govern your use of the Sea Sky Solutions LLC website and the travel planning or booking support we provide. By using this website or requesting travel services, you agree to these terms.</p>
     <h2>1. Travel bookings</h2>
     <p>Flights, accommodation, cruises, transfers, tours and other travel products may be supplied by independent travel providers. Their terms, fare rules, availability, cancellation conditions and eligibility requirements apply in addition to these Terms.</p>
     <h2>2. Prices and availability</h2>
@@ -31,7 +31,7 @@ const TermsPage = () => (
     <h2>8. Changes to these Terms</h2>
     <p>We may update these Terms when our services, suppliers, legal obligations or website features change. The revised version will be posted on this page with an updated effective date.</p>
     <h2>9. Contact</h2>
-    <p>For questions about these Terms, contact Sea Sky Solutions at <a href={siteContact.email.href}>{siteContact.email.address}</a> or call <a href={siteContact.phone.href}>{siteContact.phone.display}</a>.</p>
+    <p>For questions about these Terms, contact Sea Sky Solutions LLC at <a href={siteContact.email.href}>{siteContact.email.address}</a> or call <a href={siteContact.phone.href}>{siteContact.phone.display}</a>.</p>
   </LegalPageLayout>
 );
 

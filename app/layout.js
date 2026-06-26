@@ -14,13 +14,13 @@ const monaSans = localFont({
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Sea Sky Solutions | Travel Made Simple",
-    template: "%s | Sea Sky Solutions",
+    default: "Sea Sky Solutions LLC | Travel Made Simple",
+    template: "%s | Sea Sky Solutions LLC",
   },
   description:
-    "Plan flights, hotels, cruises and tailored travel packages with Sea Sky Solutions.",
+    "Plan flights, hotels, cruises and tailored travel packages with Sea Sky Solutions LLC.",
   keywords: [
-    "Sea Sky Solutions",
+    "Sea Sky Solutions LLC",
     "travel agency",
     "flights",
     "hotels",
@@ -36,7 +36,7 @@ export const metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "Sea Sky Solutions",
+    siteName: "Sea Sky Solutions LLC",
     locale: "en_US",
   },
   icons: {

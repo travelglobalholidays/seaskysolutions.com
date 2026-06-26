@@ -1,3 +1,5 @@
+"use client";
+
 import { siteContact } from "@/config/siteContact";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,6 +17,7 @@ import {
   FiMapPin,
   FiPhoneCall,
 } from "react-icons/fi";
+import { useCurrentServiceContact } from "./useCurrentServiceContact";
 
 const topPicks = [
   { label: "About Sea Sky", href: "/about-us" },
@@ -52,27 +55,6 @@ const FooterLinkList = ({ items }) => (
   </ul>
 );
 
-const contactItems = [
-  {
-    label: "Talk to Us",
-    value: siteContact.phone.display,
-    href: siteContact.phone.href,
-    icon: FiPhoneCall,
-  },
-  {
-    label: "Message Us",
-    value: siteContact.email.address,
-    href: siteContact.email.href,
-    icon: FiMail,
-  },
-  {
-    label: "Locate Us",
-    value: siteContact.address.display,
-    href: siteContact.address.href,
-    icon: FiMapPin,
-  },
-];
-
 const socialLinks = [
   { label: "Instagram", icon: BsInstagram },
   { label: "YouTube", icon: BsYoutube },
@@ -82,6 +64,28 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const currentContact = useCurrentServiceContact();
+  const contactItems = [
+    {
+      label: "Talk to Us",
+      value: currentContact.phone.display,
+      href: currentContact.phone.href,
+      icon: FiPhoneCall,
+    },
+    {
+      label: "Message Us",
+      value: siteContact.email.address,
+      href: siteContact.email.href,
+      icon: FiMail,
+    },
+    {
+      label: "Locate Us",
+      value: siteContact.address.display,
+      href: siteContact.address.href,
+      icon: FiMapPin,
+    },
+  ];
+
   return (
     <footer className="border-t border-[var(--brand-blue)]/15 bg-white text-[var(--brand-blue)]">
       <div className="site-container mx-auto px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
@@ -90,11 +94,11 @@ const Footer = () => {
             <Link
               href="/"
               className="inline-block"
-              aria-label="Sea Sky Solutions home"
+              aria-label="Sea Sky Solutions LLC home"
             >
               <Image
                 src="/images/logo.png"
-                alt="Sea Sky Solutions"
+                alt="Sea Sky Solutions LLC"
                 width={600}
                 height={161}
                 className="h-auto w-[255px] max-w-full"
@@ -125,7 +129,7 @@ const Footer = () => {
             </h2>
             <p className="mt-5 max-w-[290px] text-[16px] leading-7 text-[var(--brand-blue)]/65">
               Subscribe for travel inspiration, exclusive offers and planning
-              tips from Sea Sky Solutions.
+              tips from Sea Sky Solutions LLC.
             </p>
             <form className="mt-6 max-w-[310px]" action="#newsletter">
               <label className="sr-only" htmlFor="footer-email">
@@ -173,8 +177,21 @@ const Footer = () => {
           ))}
         </div>
 
+        <div className="mt-10 rounded-[16px] border border-[var(--brand-blue)]/12 bg-[var(--brand-blue)]/5 p-5 text-[13px] leading-6 text-[var(--brand-blue)]/70 sm:p-6">
+          <h2 className="text-[15px] font-[800] text-[var(--brand-blue)]">
+            Disclaimer:
+          </h2>
+          <p className="mt-2">
+            Sea Sky Solutions LLC is an independent travel assistance agency
+            and is not affiliated with, endorsed by, or associated with any
+            airline, hotel, or travel service provider. All trademarks, brand
+            names, and logos are used for identification purposes only. Prices
+            and availability are subject to change without prior notice.
+          </p>
+        </div>
+
         <div className="mt-9 flex flex-col gap-6 border-t border-[var(--brand-blue)]/10 pt-8 text-[16px] text-[var(--brand-blue)] sm:flex-row sm:items-center sm:justify-between lg:mt-10">
-          <p>© 2026 Sea Sky Solutions. All Rights Reserved.</p>
+          <p>© 2026 Sea Sky Solutions LLC. All Rights Reserved.</p>
           <nav
             className="order-first flex items-center gap-2 sm:order-none"
             aria-label="Social media links"
@@ -191,10 +208,10 @@ const Footer = () => {
             ))}
           </nav>
           <a
-            href={siteContact.phone.href}
+            href={currentContact.phone.href}
             className="font-[500] transition hover:text-[var(--brand-green)]"
           >
-            Have a trip in mind? {siteContact.phone.display}
+            Have a trip in mind? {currentContact.phone.display}
           </a>
         </div>
       </div>

@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { FiArrowUp, FiPhoneCall } from "react-icons/fi";
-import { siteContact } from "@/config/siteContact";
+import { useCurrentServiceContact } from "./useCurrentServiceContact";
 
 const SCROLL_OFFSET = 360;
 
 const FixedActions = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const currentContact = useCurrentServiceContact();
 
   useEffect(() => {
     const updateVisibility = () => {
@@ -27,19 +28,21 @@ const FixedActions = () => {
   return (
     <>
       <a
-        href={siteContact.phone.href}
+        href={currentContact.phone.href}
         className={`group fixed bottom-4 left-1/2 z-50 inline-flex min-h-12 -translate-x-1/2 items-center gap-2 rounded-full bg-[var(--brand-green)] py-1.5 pl-2 pr-4 text-[14px] font-[800] text-white shadow-[0_12px_28px_rgba(4,50,82,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand-blue)] focus:outline-none focus:ring-4 focus:ring-[var(--brand-green)]/35 sm:bottom-6 sm:min-h-14 sm:gap-3 sm:pl-2.5 sm:pr-5 sm:text-[16px] ${
         isVisible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-5 opacity-0"
       }`}
-        aria-label={`Call Sea Sky Solutions at ${siteContact.phone.display}`}
+        aria-label={`Call Sea Sky Solutions LLC at ${currentContact.phone.display}`}
         tabIndex={isVisible ? 0 : -1}
       >
         <span className="flex size-9 items-center justify-center rounded-full bg-white text-[18px] text-[var(--brand-green)] transition-colors group-hover:text-[var(--brand-blue)] sm:size-10 sm:text-[20px]">
           <FiPhoneCall aria-hidden="true" />
         </span>
-        <span className="whitespace-nowrap">Toll Free: {siteContact.phone.display}</span>
+        <span className="whitespace-nowrap">
+          Toll Free: {currentContact.phone.display}
+        </span>
       </a>
 
       <button

@@ -2,6 +2,7 @@ import { siteUrl } from "@/config/siteMetadata";
 
 const routes = [
   "",
+  "/hotels",
   "/about-us",
   "/contact-us",
   "/faqs",

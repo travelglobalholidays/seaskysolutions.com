@@ -34,7 +34,7 @@ const WhyChooseUs = () => {
           <div className="max-w-3xl">
             <p className="flex items-center gap-2 text-[14px] font-[500] uppercase tracking-[0.2em] text-[var(--brand-green)]">
               <FiCompass className="text-[18px]" aria-hidden="true" />
-              Why Sea Sky Solutions
+              Why Sea Sky Solutions LLC
             </p>
             <h2 className="mt-1 text-[30px] font-[500] leading-[1.08] tracking-tight text-[var(--brand-blue)] sm:text-[44px] lg:text-[38px]">
               Your Trusted Travel Partner

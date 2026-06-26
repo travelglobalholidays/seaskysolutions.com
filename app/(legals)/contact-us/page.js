@@ -8,7 +8,7 @@ import { createPageMetadata } from "@/config/siteMetadata";
 export const metadata = createPageMetadata({
   title: "Contact Us",
   description:
-    "Contact Sea Sky Solutions for help planning flights, hotels, cruises and travel packages.",
+    "Contact Sea Sky Solutions LLC for help planning flights, hotels, cruises and travel packages.",
   path: "/contact-us",
   keywords: ["contact travel agent", "travel planning help"],
 });

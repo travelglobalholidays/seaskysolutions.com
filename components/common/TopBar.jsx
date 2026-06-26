@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import { siteContact } from "@/config/siteContact";
 import { BsInstagram, BsTwitterX } from "react-icons/bs";
+import { useCurrentServiceContact } from "./useCurrentServiceContact";
 
 const TopBar = () => {
+  const currentContact = useCurrentServiceContact();
+
   return (
     <div className="hidden md:block px-2 text-[var(--text-color)] sm:px-4">
       <div className="relative mx-auto site-container flex min-h-10  items-center justify-center   px-4 py-3 sm:px-8 lg:px-12">
@@ -20,7 +25,7 @@ const TopBar = () => {
             <span className="whitespace-nowrap">Ready to Plan?</span>
 
             <a
-              href={siteContact.phone.href}
+              href={currentContact.phone.href}
               className="flex items-center gap-2 whitespace-nowrap"
             >
               <Image
@@ -31,7 +36,9 @@ const TopBar = () => {
                 className="h-[18px] w-[18px] object-contain"
                 aria-hidden="true"
               />
-              <span className="hover:text-brand-green">{siteContact.phone.display}</span>
+              <span className="hover:text-brand-green">
+                {currentContact.phone.display}
+              </span>
             </a>
 
             <span className="hidden whitespace-nowrap text-xs text-[var(--text-muted)] lg:inline">

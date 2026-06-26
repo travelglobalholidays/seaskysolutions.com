@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/config/siteMetadata";
 
 export const metadata = createPageMetadata({
   title: "Privacy Policy",
-  description: "Read how Sea Sky Solutions collects, uses and protects personal information.",
+  description: "Read how Sea Sky Solutions LLC collects, uses and protects personal information.",
   path: "/privacy-policy",
   keywords: ["privacy policy", "travel website privacy"],
 });
@@ -12,7 +12,7 @@ export const metadata = createPageMetadata({
 const PrivacyPage = () => (
   <LegalPageLayout title="Privacy Policy" eyebrow="Your privacy matters">
     <p><strong>Last updated:</strong> June 20, 2026</p>
-    <p>This Privacy Policy explains how Sea Sky Solutions collects, uses and protects personal information when you use our website, contact us or request travel services.</p>
+    <p>This Privacy Policy explains how Sea Sky Solutions LLC collects, uses and protects personal information when you use our website, contact us or request travel services.</p>
     <h2>1. Information we may collect</h2>
     <ul><li>Contact details, such as your name, email address, phone number and preferred method of contact.</li><li>Trip details, including destinations, dates, traveller information and travel preferences.</li><li>Booking and payment information where required to arrange a travel product.</li><li>Website and device information, such as pages viewed, approximate location, browser type and cookie preferences.</li></ul>
     <h2>2. How we use information</h2>

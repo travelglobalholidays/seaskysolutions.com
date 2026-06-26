@@ -12,7 +12,7 @@ import { createPageMetadata } from "@/config/siteMetadata";
 export const metadata = createPageMetadata({
   title: "Travel Made Simple",
   description:
-    "Compare flights, hotels, cruises and travel packages with Sea Sky Solutions. Start planning your next trip today.",
+    "Compare flights, hotels, cruises and travel packages with Sea Sky Solutions LLC. Start planning your next trip today.",
   keywords: ["vacation planning", "holiday deals", "book travel online"],
 });
 

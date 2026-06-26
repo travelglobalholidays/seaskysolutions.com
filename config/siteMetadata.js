@@ -1,7 +1,7 @@
 export const siteUrl = "https://seaskysolutions.com";
 
 const defaultKeywords = [
-  "Sea Sky Solutions",
+  "Sea Sky Solutions LLC",
   "travel agency",
   "flight booking",
   "hotel booking",
@@ -17,10 +17,10 @@ export const createPageMetadata = ({ title, description, path = "/", keywords = 
     canonical: path,
   },
   openGraph: {
-    title: `${title} | Sea Sky Solutions`,
+    title: `${title} | Sea Sky Solutions LLC`,
     description,
     url: path,
-    siteName: "Sea Sky Solutions",
+    siteName: "Sea Sky Solutions LLC",
     type: "website",
   },
 });

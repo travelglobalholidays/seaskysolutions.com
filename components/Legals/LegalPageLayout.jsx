@@ -6,7 +6,7 @@ import { FiChevronRight, FiCompass } from "react-icons/fi";
 
 const LegalPageLayout = ({
   title,
-  eyebrow = "Sea Sky Solutions",
+  eyebrow = "Sea Sky Solutions LLC",
   children,
 }) => {
   return (

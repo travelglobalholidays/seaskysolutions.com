@@ -19,9 +19,9 @@ const AboutUs = () => (
     <section className="bg-white py-12 sm:py-16 lg:py-20">
       <div className="site-container mx-auto grid items-center gap-10 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_430px] lg:gap-16 lg:px-12">
         <div>
-          <p className="flex items-center gap-2 text-[14px] font-[500] uppercase tracking-[0.2em] text-[var(--brand-green)]"><FiCompass aria-hidden="true" />About Sea Sky Solutions</p>
+          <p className="flex items-center gap-2 text-[14px] font-[500] uppercase tracking-[0.2em] text-[var(--brand-green)]"><FiCompass aria-hidden="true" />About Sea Sky Solutions LLC</p>
           <h2 className="mt-2 max-w-xl text-[31px] font-[500] leading-[1.1] tracking-tight text-[var(--brand-blue)] sm:text-[43px]">Travel should feel exciting, not complicated.</h2>
-          <p className="mt-5 max-w-2xl text-[16px] leading-7 text-[var(--brand-blue)]/65">Sea Sky Solutions helps travelers turn ideas into well-planned journeys. From flights and hotels to cruises, packages and destination experiences, we help you compare the details that matter and move forward with clarity.</p>
+          <p className="mt-5 max-w-2xl text-[16px] leading-7 text-[var(--brand-blue)]/65">Sea Sky Solutions LLC helps travelers turn ideas into well-planned journeys. From flights and hotels to cruises, packages and destination experiences, we help you compare the details that matter and move forward with clarity.</p>
           <p className="mt-4 max-w-2xl text-[16px] leading-7 text-[var(--brand-blue)]/65">Our approach is personal: listen first, recommend thoughtfully and keep every step understandable. Whether you are planning a quick escape or a long-awaited celebration, we are here to make the path smoother.</p>
           <div className="mt-7 grid gap-4 sm:grid-cols-3">
             {values.map(({ title, text, icon: Icon }) => <article key={title} className="rounded-[18px] border border-[var(--brand-blue)]/12 bg-[#eef4f6] p-5"><span className="flex size-10 items-center justify-center rounded-full bg-[var(--brand-green)]/15 text-[20px] text-[var(--brand-blue)]"><Icon aria-hidden="true" /></span><h3 className="mt-4 text-[17px] font-[500] text-[var(--brand-blue)]">{title}</h3><p className="mt-2 text-[14px] leading-6 text-[var(--brand-blue)]/65">{text}</p></article>)}

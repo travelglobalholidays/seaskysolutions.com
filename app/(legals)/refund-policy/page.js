@@ -5,7 +5,7 @@ import { createPageMetadata } from "@/config/siteMetadata";
 export const metadata = createPageMetadata({
   title: "Refund Policy",
   description:
-    "Review Sea Sky Solutions cancellation, change and refund request information.",
+    "Review Sea Sky Solutions LLC cancellation, change and refund request information.",
   path: "/refund-policy",
   keywords: ["travel refund policy", "travel cancellation policy"],
 });
@@ -13,11 +13,11 @@ export const metadata = createPageMetadata({
 const RefundPage = () => (
   <LegalPageLayout title="Refund Policy" eyebrow="Clear booking support">
     <p><strong>Last updated:</strong> June 20, 2026</p>
-    <p>This policy explains how cancellation and refund requests are handled for travel products arranged through Sea Sky Solutions.</p>
+    <p>This policy explains how cancellation and refund requests are handled for travel products arranged through Sea Sky Solutions LLC.</p>
     <h2>1. Supplier rules apply</h2>
     <p>Each airline, hotel, cruise line, tour operator and other supplier has its own cancellation, change and refund rules. Your confirmed itinerary and supplier terms determine whether a refund, credit or change is available.</p>
     <h2>2. How to request a cancellation</h2>
-    <p>Send your request as soon as possible to <a href={siteContact.email.href}>{siteContact.email.address}</a> with your booking reference, traveller name and the requested change. A request is not confirmed until Sea Sky Solutions responds in writing.</p>
+    <p>Send your request as soon as possible to <a href={siteContact.email.href}>{siteContact.email.address}</a> with your booking reference, traveller name and the requested change. A request is not confirmed until Sea Sky Solutions LLC responds in writing.</p>
     <h2>3. Fees and non-refundable products</h2>
     <p>Supplier penalties, fare differences, processing fees and non-refundable deposits may apply. Some promotional fares, tickets, packages and services cannot be refunded after purchase.</p>
     <h2>4. Processing time</h2>
