@@ -9,6 +9,7 @@ import { useCurrentServiceContact } from "./useCurrentServiceContact";
 
 const navItems = [
   { label: "Home", href: "/" },
+  { label: "Flights", href: "/flights" },
   { label: "Car Rental", href: "/car-rental" },
   { label: "Trains", href: "/train-booking" },
   { label: "Hotels", href: "/hotels" },

@@ -27,6 +27,13 @@ export const serviceContacts = {
       href: "tel:+18883833261",
     },
   },
+  flights: {
+    label: "Flights",
+    phone: {
+      display: "+1 (888) 237-6451",
+      href: "tel:+18882376451",
+    },
+  },
 };
 
 export const getServiceContactByPathname = (pathname = "") => {
@@ -40,6 +47,10 @@ export const getServiceContactByPathname = (pathname = "") => {
 
   if (pathname.startsWith("/hotels")) {
     return serviceContacts.hotels;
+  }
+
+  if (pathname.startsWith("/flights")) {
+    return serviceContacts.flights;
   }
 
   return serviceContacts.default;
