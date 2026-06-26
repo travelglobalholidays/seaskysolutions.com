@@ -9,8 +9,8 @@ import TopBar from "./TopBar";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Flights", href: "/" },
-  { label: "Hotels", href: "/" },
+  { label: "Car Rental", href: "/car-rental" },
+  { label: "Trains", href: "/train-booking" },
   { label: "About", href: "/about-us" },
   { label: "Contact", href: "/contact-us" },
 ];

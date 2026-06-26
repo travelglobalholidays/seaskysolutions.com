@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import Script from "next/script";
 import FixedActions from "@/components/common/FixedActions";
 import { siteUrl } from "@/config/siteMetadata";
 import "./globals.css";
@@ -57,6 +58,18 @@ export default function RootLayout({ children }) {
         {children}
         <FixedActions />
       </body>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18273435034"
+        strategy="afterInteractive"
+      />
+      <Script id="google-ads-tag" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18273435034');
+        `}
+      </Script>
     </html>
   );
 }
