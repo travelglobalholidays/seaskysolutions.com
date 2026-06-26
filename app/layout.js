@@ -70,6 +70,24 @@ export default function RootLayout({ children }) {
           gtag('config', 'AW-18273435034');
         `}
       </Script>
+      <Script id="google-ads-click-to-call-conversion" strategy="afterInteractive">
+        {`
+          function gtag_report_conversion(url) {
+            var callback = function () {
+              if (typeof(url) != 'undefined') {
+                window.location = url;
+              }
+            };
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18273435034/MYZ_CLfNkMYcEJr7uYlE',
+              'value': 1.0,
+              'currency': 'USD',
+              'event_callback': callback
+            });
+            return false;
+          }
+        `}
+      </Script>
     </html>
   );
 }
