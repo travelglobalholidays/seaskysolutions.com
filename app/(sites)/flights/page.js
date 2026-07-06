@@ -1,11 +1,15 @@
+import FareOffersGrid from "@/components/Flights/FareOffersGrid";
 import FlightBanner from "@/components/Flights/FlightBanner";
+import FlightBookingContent from "@/components/Flights/FlightBookingContent";
 import FlightBookingFeatures from "@/components/Flights/FlightBookingFeatures";
 import FlightBookingWhyUs from "@/components/Flights/FlightBookingWhyUs";
 import FlightCallExperts from "@/components/Flights/FlightCallExperts";
 import FlightHowItWorks from "@/components/Flights/FlightHowItWorks";
-import FlightOptions from "@/components/Flights/FlightOptions";
 import FlightPopularDestinations from "@/components/Flights/FlightPopularDestinations";
 import FlightTestimonials from "@/components/Flights/FlightTestimonials";
+import RecommendedTripsCarousel from "@/components/Flights/RecommendedTripsCarousel";
+import SearchForm from "@/components/Flights/SearchForm";
+import TopDestinationsCarousel from "@/components/Flights/TopDestinationsCarousel";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import { createPageMetadata } from "@/config/siteMetadata";
@@ -34,11 +38,17 @@ const FlightsPage = () => {
     <div className="">
       <Header />
       <FlightBanner />
-      <FlightOptions />
+      <section className="relative z-20 -mt-16 px-4 pb-10 sm:px-6 lg:px-8">
+        <SearchForm />
+      </section>
+      <FlightHowItWorks />
+      <RecommendedTripsCarousel />
+      <TopDestinationsCarousel />
+      <FareOffersGrid />
       <FlightBookingFeatures />
       <FlightBookingWhyUs />
       <FlightPopularDestinations />
-      <FlightHowItWorks />
+      <FlightBookingContent />
       <FlightCallExperts />
       <FlightTestimonials />
       <Footer />

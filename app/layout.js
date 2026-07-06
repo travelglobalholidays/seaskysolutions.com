@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import Script from "next/script";
 import FixedActions from "@/components/common/FixedActions";
+import Providers from "@/components/Providers";
 import { siteUrl } from "@/config/siteMetadata";
 import "./globals.css";
 
@@ -55,7 +56,7 @@ export default function RootLayout({ children }) {
       className={`${monaSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {children}
+        <Providers>{children}</Providers>
         <FixedActions />
       </body>
       <Script

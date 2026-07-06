@@ -4,6 +4,26 @@
   --font-sans: var(--font-mona-sans), ui-sans-serif, system-ui, sans-serif;
   --color-brand-blue: var(--brand-blue);
   --color-brand-green: var(--brand-green);
+  --color-blue: var(--brand-blue);
+  --color-blue-dark: #06466f;
+  --color-blue-soft: #eef8ff;
+  --color-green: var(--brand-green);
+  --color-heading: #073f63;
+  --color-light-blue: #315f7a;
+  --color-light-grey: #eef5f8;
+  --color-light-grey-hover: #e2eef3;
+  --color-subtle: #d8e7ef;
+  --color-theme: var(--brand-blue);
+  --color-hover-dark: #06466f;
+  --color-theme-light: #eef8ff;
+  --color-primary: var(--brand-blue);
+  --color-primary-dark: #06466f;
+  --color-primary-light: #e9f4fa;
+  --color-accent: var(--brand-green);
+  --color-dark: #102a3d;
+  --color-body: #4b6271;
+  --color-light: #647988;
+  --shadow-theme: 0 16px 36px rgb(7 89 139 / 0.12);
 }
 
 :root {
@@ -45,6 +65,31 @@ select {
 .site-container {
   width: min(100%, var(--site-container));
   margin-inline: auto;
+}
+
+.container {
+  width: min(100% - 2rem, var(--site-container));
+  margin-inline: auto;
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(rgb(7 89 139 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(7 89 139 / 0.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.dot-field {
+  background-image: radial-gradient(rgb(7 89 139 / 0.28) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+.font-poppins-medium {
+  font-weight: 600;
+}
+
+.font-poppins-semibold {
+  font-weight: 800;
 }
 button {
   cursor: pointer;
