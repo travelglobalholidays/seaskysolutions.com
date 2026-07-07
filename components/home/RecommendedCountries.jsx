@@ -53,7 +53,7 @@ const RecommendedCountries = () => {
       />
       <div className="site-container relative mx-auto px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="flex items-center justify-center gap-2 text-[14px] font-[500] uppercase tracking-[0.22em] text-[var(--brand-green)]">
+          <p className="flex items-center justify-center gap-2 text-[14px] font-[500] uppercase tracking-[0.22em] text-accent-strong">
             <FiMapPin aria-hidden="true" />
             Recommended Countries
           </p>
@@ -103,16 +103,16 @@ const RecommendedCountries = () => {
                   </p>
                 </a>
 
-                <div className="mt-3 flex min-h-[66px] items-center justify-between gap-3 rounded-full border border-[var(--brand-blue)]/10 bg-white py-1 pl-5 pr-1 shadow-[0_6px_0_rgba(7,89,139,0.08)]">
+                <div className="mt-3 flex min-h-[66px] items-center justify-between gap-3 rounded-full border border-[var(--brand-blue)]/10 bg-white py-1 pl-5 pr-1 shadow-card">
                   <p className="text-[16px] font-[500] text-[var(--brand-blue)]/65 sm:text-[17px]">
                     {country.tours} -{" "}
-                    <span className="font-[700] text-[var(--brand-green)]">
+                    <span className="font-[700] text-accent-strong">
                       From {country.price}
                     </span>
                   </p>
                   <a
                     href="#find-your-tour"
-                    className="flex size-[54px] shrink-0 items-center justify-center rounded-r-full rounded-l-[13px] bg-[var(--brand-blue)]/10 text-[23px] text-[var(--brand-blue)] transition-colors hover:bg-[var(--brand-green)] hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--brand-green)]"
+                    className="flex size-[54px] shrink-0 items-center justify-center rounded-r-full rounded-l-[13px] bg-[var(--brand-blue)]/10 text-[23px] text-[var(--brand-blue)] transition-colors hover:bg-[var(--brand-green)] hover:text-accent-contrast focus:outline-none focus:ring-2 focus:ring-[var(--brand-green)]"
                     aria-label={`View ${country.name} tours`}
                   >
                     <FiArrowRight aria-hidden="true" />

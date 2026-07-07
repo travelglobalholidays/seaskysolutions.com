@@ -3,9 +3,9 @@
 import { useFlight } from "@/context/FlightContext";
 import axiosInstance from "@/lib/axiosInstance";
 import { encryptSearchParams } from "@/lib/encryption";
+import airportData from "@/public/data/airports.json";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import airportData from "@/public/data/airports.json";
 
 const cabinClasses = ["Economy", "Premium Economy", "Business", "First Class"];
 const maxAirportSuggestions = 7;
@@ -122,7 +122,7 @@ const getInitialAirport = (code, display) => {
 const PlaneIcon = () => (
   <svg
     aria-hidden="true"
-    className="size-4 shrink-0 text-[#b8bdc5]"
+    className="size-4 shrink-0 text-icon-muted"
     fill="currentColor"
     viewBox="0 0 24 24"
   >
@@ -133,7 +133,7 @@ const PlaneIcon = () => (
 const CalendarIcon = () => (
   <svg
     aria-hidden="true"
-    className="size-5 shrink-0 text-[#b8bdc5]"
+    className="size-5 shrink-0 text-icon-muted"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -150,7 +150,7 @@ const CalendarIcon = () => (
 const UserIcon = () => (
   <svg
     aria-hidden="true"
-    className="size-5 shrink-0 text-[#b8bdc5]"
+    className="size-5 shrink-0 text-icon-muted"
     fill="currentColor"
     viewBox="0 0 24 24"
   >
@@ -259,7 +259,7 @@ const AirportAutocomplete = ({
 
   return (
     <div
-      className="relative block min-w-0 border-b border-[#dedede] pb-4 sm:border-r sm:px-4 lg:col-span-4 lg:px-3 xl:col-span-1 xl:border-b-0 xl:px-4 xl:pb-0"
+      className="relative block min-w-0 border-b border-subtle pb-4 sm:border-r sm:px-4 lg:col-span-4 lg:px-3 xl:col-span-1 xl:border-b-0 xl:px-4 xl:pb-0"
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) {
           setIsOpen(false);
@@ -267,7 +267,7 @@ const AirportAutocomplete = ({
       }}
     >
       <label
-        className="block text-sm font-poppins-medium text-[#555461] lg:text-base"
+        className="block text-sm font-poppins-medium text-label lg:text-base"
         htmlFor={id}
       >
         {label}
@@ -285,7 +285,7 @@ const AirportAutocomplete = ({
           aria-expanded={isOpen}
           aria-label={`${label} airport`}
           autoComplete="off"
-          className="min-w-0 flex-1 bg-transparent text-base font-poppins-medium text-light-blue outline-none placeholder:text-[#9da1a8]"
+          className="min-w-0 flex-1 bg-transparent text-base font-poppins-medium text-light-blue outline-none placeholder:text-placeholder"
           id={id}
           onChange={(event) => {
             setQuery(event.target.value);
@@ -304,7 +304,7 @@ const AirportAutocomplete = ({
 
       {isOpen && normalizedQuery && (
         <ul
-          className="absolute left-0 top-[calc(100%+1rem)] z-40 max-h-[350px] w-full overflow-y-auto rounded-xl border border-subtle bg-white p-1.5 shadow-[0_18px_40px_rgba(22,33,50,0.2)] lg:w-[min(430px,calc(100vw-3rem))]"
+          className="absolute left-0 top-[calc(100%+1rem)] z-40 max-h-[350px] w-full overflow-y-auto rounded-xl border border-subtle bg-white p-1.5 shadow-dropdown lg:w-[min(430px,calc(100vw-3rem))]"
           id={listboxId}
           role="listbox"
         >
@@ -339,7 +339,7 @@ const AirportAutocomplete = ({
               </li>
             ))
           ) : (
-            <li className="px-3 py-3 text-sm text-light-grey">
+            <li className="px-3 py-3 text-sm text-light">
               No matching airports found
             </li>
           )}
@@ -363,7 +363,7 @@ const CalendarMonth = ({
     <div className="mt-4 grid grid-cols-7 gap-y-1 text-center">
       {weekDays.map((day) => (
         <span
-          className="pb-1 text-[11px] font-poppins-semibold text-light-grey"
+          className="pb-1 text-[11px] font-poppins-semibold text-light"
           key={day}
         >
           {day}
@@ -395,7 +395,7 @@ const CalendarMonth = ({
                   : isSameDay(day, today)
                     ? "border border-blue font-poppins-semibold text-blue"
                     : "text-light-blue hover:bg-light-grey"
-            } disabled:cursor-not-allowed disabled:text-[#c7c8ce] disabled:hover:bg-transparent`}
+            } disabled:cursor-not-allowed disabled:text-disabled disabled:hover:bg-transparent`}
             disabled={isDisabled}
             key={day.toISOString()}
             onClick={() => onSelect(day)}
@@ -465,12 +465,12 @@ const DateRangePicker = ({
 
   return (
     <div
-      className="relative min-w-0 border-b border-[#dedede] pb-4 sm:col-span-2 sm:px-4 lg:col-span-4 lg:px-3 xl:col-span-1 xl:border-b-0 xl:border-r xl:px-0 xl:pb-0"
+      className="relative min-w-0 border-b border-subtle pb-4 sm:col-span-2 sm:px-4 lg:col-span-4 lg:px-3 xl:col-span-1 xl:border-b-0 xl:border-r xl:px-0 xl:pb-0"
       ref={datePickerRef}
     >
       <div className="grid gap-4 min-[460px]:grid-cols-2 min-[460px]:gap-0">
-        <div className="min-w-0 min-[460px]:border-r min-[460px]:border-[#dedede] min-[460px]:pr-3 xl:px-4">
-          <span className="block text-sm font-poppins-medium text-[#555461] xl:text-base">
+        <div className="min-w-0 min-[460px]:border-r min-[460px]:border-subtle min-[460px]:pr-3 xl:px-4">
+          <span className="block text-sm font-poppins-medium text-label xl:text-base">
             Departure Date
           </span>
           <button
@@ -486,7 +486,7 @@ const DateRangePicker = ({
         </div>
 
         <div className="min-w-0 min-[460px]:pl-3 xl:px-4">
-          <span className="block text-sm font-poppins-medium text-[#555461] xl:text-base">
+          <span className="block text-sm font-poppins-medium text-label xl:text-base">
             Return Date
           </span>
           {tripType === "round-trip" ? (
@@ -503,7 +503,7 @@ const DateRangePicker = ({
               </span>
             </button>
           ) : (
-            <span className="mt-3 block text-sm leading-snug text-[#898992]">
+            <span className="mt-3 block text-sm leading-snug text-muted">
               Book a round trip to save more
             </span>
           )}
@@ -513,7 +513,7 @@ const DateRangePicker = ({
       {isOpen && (
         <div
           aria-label="Choose travel dates"
-          className="absolute left-1/2 top-[calc(100%+1rem)] z-50 w-[min(680px,calc(100vw-2rem))] -translate-x-1/2 rounded-2xl border border-subtle bg-white p-4 shadow-[0_18px_40px_rgba(22,33,50,0.2)] sm:p-5 lg:left-auto lg:right-0 lg:translate-x-0"
+          className="absolute left-1/2 top-[calc(100%+1rem)] z-50 w-[min(680px,calc(100vw-2rem))] -translate-x-1/2 rounded-2xl border border-subtle bg-white p-4 shadow-dropdown sm:p-5 lg:left-auto lg:right-0 lg:translate-x-0"
           role="dialog"
         >
           <div className="flex items-center justify-between gap-3">
@@ -529,7 +529,7 @@ const DateRangePicker = ({
             >
               <ArrowIcon direction="left" />
             </button>
-            <p className="text-center text-xs text-light-grey sm:text-sm">
+            <p className="text-center text-xs text-light sm:text-sm">
               {tripType === "round-trip"
                 ? "Select departure and return dates"
                 : "Select your departure date"}
@@ -571,13 +571,13 @@ const DateRangePicker = ({
 const TripTypeButton = ({ checked, children, onClick }) => (
   <button
     aria-pressed={checked}
-    className="flex items-center gap-2.5 whitespace-nowrap text-sm font-poppins-semibold text-[#2c2930] transition-colors hover:text-blue sm:text-lg"
+    className="flex items-center gap-2.5 whitespace-nowrap text-sm font-poppins-semibold text-heading transition-colors hover:text-blue sm:text-lg"
     onClick={onClick}
     type="button"
   >
     <span
       className={`flex size-5 items-center justify-center rounded-full border-2 sm:size-6 ${
-        checked ? "border-blue" : "border-[#c5c5c5]"
+        checked ? "border-blue" : "border-border-strong"
       }`}
     >
       {checked && <span className="size-2.5 rounded-full bg-blue sm:size-3" />}
@@ -596,27 +596,27 @@ const CounterRow = ({
 }) => (
   <div className="flex items-center justify-between gap-4 py-3">
     <div>
-      <p className="text-sm font-poppins-semibold leading-tight text-[#2c2930]">
+      <p className="text-sm font-poppins-semibold leading-tight text-heading">
         {label}
       </p>
-      <p className="mt-1 text-xs leading-tight text-[#8a8d95]">{note}</p>
+      <p className="mt-1 text-xs leading-tight text-muted">{note}</p>
     </div>
     <div className="flex items-center gap-3">
       <button
         aria-label={`Decrease ${label}`}
-        className="flex size-8 items-center justify-center rounded-full border border-[#d8dadd] text-lg leading-none text-[#646872] transition-colors hover:border-blue hover:text-blue disabled:cursor-not-allowed disabled:opacity-35"
+        className="flex size-8 items-center justify-center rounded-full border border-border-strong text-lg leading-none text-muted transition-colors hover:border-blue hover:text-blue disabled:cursor-not-allowed disabled:opacity-35"
         disabled={label === "Adults" ? count === 1 : count === 0}
         onClick={onDecrement}
         type="button"
       >
         -
       </button>
-      <span className="w-4 text-center text-sm font-poppins-semibold text-[#2c2930]">
+      <span className="w-4 text-center text-sm font-poppins-semibold text-heading">
         {count}
       </span>
       <button
         aria-label={`Increase ${label}`}
-        className="flex size-8 items-center justify-center rounded-full border border-[#d8dadd] text-lg leading-none text-[#646872] transition-colors hover:border-blue hover:text-blue disabled:cursor-not-allowed disabled:opacity-35"
+        className="flex size-8 items-center justify-center rounded-full border border-border-strong text-lg leading-none text-muted transition-colors hover:border-blue hover:text-blue disabled:cursor-not-allowed disabled:opacity-35"
         disabled={disabledIncrement}
         onClick={onIncrement}
         type="button"
@@ -816,11 +816,11 @@ const SearchForm = ({ initialValues = {}, isResultsPage = false }) => {
 
   return (
     <form
-      className="relative mx-auto max-w-[1768px]"
+      className="relative mx-auto container"
       id="flight-search"
       onSubmit={handleSubmit}
     >
-      <div className="mx-auto flex w-fit items-center gap-7 rounded-t-[20px] border-x border-t border-white/50 bg-white/95 px-7 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur sm:gap-12 sm:px-8">
+      <div className="mx-auto flex w-fit items-center gap-7 rounded-t-[20px] border-x border-t border-white/50 bg-white/95 px-7 py-3 shadow-card backdrop-blur sm:gap-12 sm:px-8">
         <TripTypeButton
           checked={tripType === "one-way"}
           onClick={() => setTripType("one-way")}
@@ -841,7 +841,7 @@ const SearchForm = ({ initialValues = {}, isResultsPage = false }) => {
         </TripTypeButton>
       </div>
 
-      <div className="relative  rounded-[24px] border border-white/70 bg-white/98 px-5 py-5 shadow-[0_22px_46px_rgba(10,8,74,0.2)] sm:px-7 lg:px-6 lg:py-6 xl:px-8">
+      <div className="relative  rounded-[24px] border border-white/70 bg-white/98 px-5 py-5 shadow-modal sm:px-7 lg:px-6 lg:py-6 xl:px-8">
         {(formError || isResultsPage) && (
           <div className="mb-4 flex flex-col gap-2 rounded-2xl border border-subtle bg-light-grey px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
             {isResultsPage && (
@@ -885,16 +885,16 @@ const SearchForm = ({ initialValues = {}, isResultsPage = false }) => {
           />
 
           <div
-            className="relative min-w-0 border-b border-[#dedede] pb-4 sm:border-r sm:px-4 lg:col-span-6 lg:border-b-0 lg:px-3 lg:pb-0 xl:col-span-1 xl:px-4"
+            className="relative min-w-0 border-b border-subtle pb-4 sm:border-r sm:px-4 lg:col-span-6 lg:border-b-0 lg:px-3 lg:pb-0 xl:col-span-1 xl:px-4"
             ref={travelersPanelRef}
           >
-            <span className="block text-sm font-poppins-medium text-[#555461] lg:text-base">
+            <span className="block text-sm font-poppins-medium text-label lg:text-base">
               Travelers &amp; Class
             </span>
             <button
               aria-expanded={isTravelersOpen}
               aria-haspopup="dialog"
-              className="mt-5 flex w-full items-center gap-2 text-left text-base font-poppins-medium text-[#2f3037]"
+              className="mt-5 flex w-full items-center gap-2 text-left text-base font-poppins-medium text-control-text"
               onClick={() => setIsTravelersOpen((isOpen) => !isOpen)}
               type="button"
             >
@@ -908,14 +908,14 @@ const SearchForm = ({ initialValues = {}, isResultsPage = false }) => {
             {isTravelersOpen && (
               <div
                 aria-label="Choose travelers and cabin class"
-                className="absolute left-0 top-[calc(100%+1.25rem)] z-30 w-[min(390px,calc(100vw-3rem))] rounded-2xl border border-[#e4e4e4] bg-white p-5 shadow-[0_18px_40px_rgba(22,33,50,0.2)] xl:left-auto xl:right-0"
+                className="absolute left-0 top-[calc(100%+1.25rem)] z-30 w-[min(390px,calc(100vw-3rem))] rounded-2xl border border-subtle bg-white p-5 shadow-dropdown xl:left-auto xl:right-0"
                 role="dialog"
               >
-                <span className="absolute -top-2 right-8 size-4 rotate-45 border-l border-t border-[#e4e4e4] bg-white" />
-                <h3 className="font-poppins-semibold text-base text-[#2c2930]">
+                <span className="absolute -top-2 right-8 size-4 rotate-45 border-l border-t border-subtle bg-white" />
+                <h3 className="font-poppins-semibold text-base text-heading">
                   Travelers
                 </h3>
-                <div className="mt-1 divide-y divide-[#ececee]">
+                <div className="mt-1 divide-y divide-subtle">
                   <CounterRow
                     count={travelers.adults}
                     disabledIncrement={totalTravelers >= maxTravelers}
@@ -942,12 +942,12 @@ const SearchForm = ({ initialValues = {}, isResultsPage = false }) => {
                   />
                 </div>
 
-                <label className="mt-3 block border-t border-[#ececee] pt-4">
-                  <span className="text-sm font-poppins-semibold text-[#2c2930]">
+                <label className="mt-3 block border-t border-subtle pt-4">
+                  <span className="text-sm font-poppins-semibold text-heading">
                     Cabin class
                   </span>
                   <select
-                    className="mt-2 w-full rounded-lg border border-[#d8dadd] bg-white px-3 py-2.5 text-sm text-[#2f3037] outline-none transition-colors focus:border-blue"
+                    className="mt-2 w-full rounded-lg border border-border-strong bg-white px-3 py-2.5 text-sm text-control-text outline-none transition-colors focus:border-blue"
                     onChange={(event) => setCabinClass(event.target.value)}
                     value={cabinClass}
                   >

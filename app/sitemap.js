@@ -14,6 +14,8 @@ const routes = [
   "/terms-conditions",
   "/privacy-policy",
   "/refund-policy",
+  "/cancellation-policy",
+  "/cookie-policy",
   "/disclaimer",
 ];
 

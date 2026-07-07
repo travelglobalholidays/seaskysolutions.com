@@ -13,7 +13,7 @@ const FlightDetails = ({ booking }) => {
   if (!snapshot) {
     return (
       <section className="rounded-xl border border-subtle bg-white p-6 shadow-theme">
-        <p className="text-sm text-light-grey">Loading flight details...</p>
+        <p className="text-sm text-light">Loading flight details...</p>
       </section>
     );
   }
@@ -46,7 +46,7 @@ const FlightDetails = ({ booking }) => {
             <p className="font-poppins-semibold text-heading">
               {snapshot.airline?.name || "Airline"}
             </p>
-            <p className="text-xs uppercase text-light-grey">
+            <p className="text-xs uppercase text-light">
               Cabin: {snapshot.cabinClass || "Economy"}
             </p>
           </div>
@@ -61,7 +61,7 @@ const FlightDetails = ({ booking }) => {
               <span className="font-poppins-semibold text-heading">
                 {index === 0 ? "Departure Flight" : "Return Flight"}
               </span>
-              <span className="flex items-center gap-1 text-light-grey">
+              <span className="flex items-center gap-1 text-light">
                 <Clock className="size-4 text-blue" />
                 {formatDuration(slice.duration)}
               </span>
@@ -75,7 +75,7 @@ const FlightDetails = ({ booking }) => {
                 <p className="mt-2 text-sm font-poppins-medium text-heading">
                   {formatTime(slice.departureTime)}
                 </p>
-                <p className="text-xs text-light-grey">
+                <p className="text-xs text-light">
                   {formatDate(slice.departureTime)}
                 </p>
               </div>
@@ -83,7 +83,7 @@ const FlightDetails = ({ booking }) => {
               <div className="flex flex-col items-center">
                 <Plane className="size-6 rotate-90 text-blue" />
                 <div className="my-2 h-px w-24 bg-subtle" />
-                <span className="text-xs text-light-grey">
+                <span className="text-xs text-light">
                   Flight {slice.flightNumber || "N/A"}
                 </span>
               </div>
@@ -95,7 +95,7 @@ const FlightDetails = ({ booking }) => {
                 <p className="mt-2 text-sm font-poppins-medium text-heading">
                   {formatTime(slice.arrivalTime)}
                 </p>
-                <p className="text-xs text-light-grey">
+                <p className="text-xs text-light">
                   {formatDate(slice.arrivalTime)}
                 </p>
               </div>

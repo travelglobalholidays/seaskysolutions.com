@@ -100,7 +100,7 @@ export default function BookingConfirmationPage() {
             <h1 className="mt-4 font-poppins-semibold text-3xl text-heading md:text-4xl">
               Booking Confirmed!
             </h1>
-            <p className="mx-auto mt-3 max-w-2xl text-light-grey">
+            <p className="mx-auto mt-3 max-w-2xl text-light">
               Your booking has been completed. A confirmation email has been
               sent to {booking.contactInfo?.email || "your email"}.
             </p>
@@ -152,7 +152,7 @@ export default function BookingConfirmationPage() {
                       <p className="font-poppins-semibold text-heading">
                         {snapshot.airline?.name || "Airline"}
                       </p>
-                      <p className="text-sm text-light-grey">
+                      <p className="text-sm text-light">
                         Flight {snapshot.slices?.[0]?.flightNumber || "N/A"}
                       </p>
                     </div>
@@ -167,7 +167,7 @@ export default function BookingConfirmationPage() {
                         <span className="rounded-full bg-light-grey px-3 py-1 text-sm font-poppins-semibold text-blue">
                           {index === 0 ? "Outbound Flight" : "Return Flight"}
                         </span>
-                        <span className="text-sm text-light-grey">
+                        <span className="text-sm text-light">
                           {formatDuration(slice.duration)}
                         </span>
                       </div>
@@ -179,7 +179,7 @@ export default function BookingConfirmationPage() {
                           <p className="text-sm text-light-blue">
                             {formatTime(slice.departureTime)}
                           </p>
-                          <p className="text-xs text-light-grey">
+                          <p className="text-xs text-light">
                             {formatDate(slice.departureTime)}
                           </p>
                         </div>
@@ -191,7 +191,7 @@ export default function BookingConfirmationPage() {
                           <p className="text-sm text-light-blue">
                             {formatTime(slice.arrivalTime)}
                           </p>
-                          <p className="text-xs text-light-grey">
+                          <p className="text-xs text-light">
                             {formatDate(slice.arrivalTime)}
                           </p>
                         </div>
@@ -215,7 +215,7 @@ export default function BookingConfirmationPage() {
                         {passenger.title} {passenger.firstName}{" "}
                         {passenger.lastName}
                       </p>
-                      <p className="mt-1 text-sm capitalize text-light-grey">
+                      <p className="mt-1 text-sm capitalize text-light">
                         {passenger.type} - {passenger.gender} -{" "}
                         {passenger.nationality}
                       </p>
@@ -234,7 +234,7 @@ export default function BookingConfirmationPage() {
                 </div>
                 <div className="space-y-3 p-6 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-light-grey">Total Paid</span>
+                    <span className="text-light">Total Paid</span>
                     <span className="font-poppins-semibold text-blue">
                       {formatMoney(booking.totalAmount, currency)}
                     </span>
@@ -248,7 +248,7 @@ export default function BookingConfirmationPage() {
                       <p className="text-light-blue">
                         {booking.paymentDetails.maskedCardNumber}
                       </p>
-                      <p className="text-light-grey">
+                      <p className="text-light">
                         {booking.paymentDetails.cardHolder}
                       </p>
                     </div>
@@ -261,7 +261,7 @@ export default function BookingConfirmationPage() {
                   <Download className="size-4" />
                   Download E-Ticket
                 </button>
-                <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-green px-5 py-3 font-poppins-semibold text-white">
+                <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-green px-5 py-3 font-poppins-semibold text-accent-contrast">
                   <Mail className="size-4" />
                   Email Confirmation
                 </button>

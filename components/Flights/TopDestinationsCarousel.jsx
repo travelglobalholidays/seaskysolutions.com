@@ -190,7 +190,7 @@ const PlaneIcon = () => (
 const DestinationCard = ({ deal, disabled, onSearch }) => (
   <button
     aria-label={`Search ${deal.origin} to ${deal.destination} flights`}
-    className="group relative block h-full min-h-[205px] w-full overflow-hidden rounded-[18px] border border-blue/10 bg-white px-4 pb-4 pt-5 text-left shadow-[0_10px_26px_rgba(7,89,139,0.07)] transition-all duration-300 hover:border-blue/30 hover:shadow-[0_16px_32px_rgba(7,89,139,0.14)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue disabled:pointer-events-none disabled:opacity-70"
+    className="group relative block h-full min-h-[205px] w-full overflow-hidden rounded-[18px] border border-blue/10 bg-white px-4 pb-4 pt-5 text-left shadow-card transition-all duration-300 hover:border-blue/30 hover:shadow-card-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue disabled:pointer-events-none disabled:opacity-70"
     disabled={disabled}
     onClick={() => onSearch(deal)}
     type="button"
@@ -210,7 +210,7 @@ const DestinationCard = ({ deal, disabled, onSearch }) => (
     <div className="ml-22">
       <p className="font-poppins-semibold text-sm leading-tight text-heading">
         Route inspiration
-        <span className="mt-1 block text-[10px] font-normal text-light-grey">
+        <span className="mt-1 block text-[10px] font-normal text-light">
           Search live availability
         </span>
       </p>
@@ -218,7 +218,7 @@ const DestinationCard = ({ deal, disabled, onSearch }) => (
 
     <div className="mt-8 flex items-center gap-3">
       <div>
-        <p className="text-xs text-light-grey">From</p>
+        <p className="text-xs text-light">From</p>
         <p className="mt-0.5 font-poppins-semibold text-base text-heading">
           {deal.origin}
         </p>
@@ -230,11 +230,11 @@ const DestinationCard = ({ deal, disabled, onSearch }) => (
           <PlaneIcon />
           <span className="h-px flex-1 border-t border-dashed border-blue/30" />
         </div>
-        <p className="mt-1 text-[11px] text-light-grey">{deal.duration}</p>
+        <p className="mt-1 text-[11px] text-light">{deal.duration}</p>
       </div>
 
       <div className="text-right">
-        <p className="text-xs text-light-grey">To</p>
+        <p className="text-xs text-light">To</p>
         <p className="mt-0.5 font-poppins-semibold text-base text-heading">
           {deal.destination}
         </p>
@@ -289,7 +289,7 @@ const TopDestinationsCarousel = () => {
             <h2 className="mt-2 font-poppins-semibold text-[34px] leading-tight text-heading sm:text-[42px]">
               Top destinations
             </h2>
-            <p className="mt-2 text-sm text-light-grey sm:text-base">
+            <p className="mt-2 text-sm text-light sm:text-base">
               Discover popular routes and check live availability for your next
               journey.
             </p>
@@ -298,7 +298,7 @@ const TopDestinationsCarousel = () => {
           <div className="flex items-center gap-2">
             <button
               aria-label="Previous destination"
-              className="flex size-11 items-center justify-center rounded-full border border-blue bg-white text-blue transition-colors hover:bg-blue hover:text-white disabled:cursor-not-allowed disabled:border-subtle disabled:text-light-grey disabled:hover:bg-white"
+              className="flex size-11 items-center justify-center rounded-full border border-blue bg-white text-blue transition-colors hover:bg-blue hover:text-white disabled:cursor-not-allowed disabled:border-subtle disabled:text-disabled disabled:hover:bg-white"
               disabled={isBeginning}
               onClick={() => carousel?.slidePrev()}
               type="button"
@@ -307,7 +307,7 @@ const TopDestinationsCarousel = () => {
             </button>
             <button
               aria-label="Next destination"
-              className="flex size-11 items-center justify-center rounded-full border border-blue bg-white text-blue transition-colors hover:bg-blue hover:text-white disabled:cursor-not-allowed disabled:border-subtle disabled:text-light-grey disabled:hover:bg-white"
+              className="flex size-11 items-center justify-center rounded-full border border-blue bg-white text-blue transition-colors hover:bg-blue hover:text-white disabled:cursor-not-allowed disabled:border-subtle disabled:text-disabled disabled:hover:bg-white"
               disabled={isEnd}
               onClick={() => carousel?.slideNext()}
               type="button"

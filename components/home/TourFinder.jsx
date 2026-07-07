@@ -32,7 +32,7 @@ const travellerOptions = [
 function TourPackageCard({ className = "" }) {
   return (
     <aside
-      className={`relative overflow-hidden rounded-[22px] bg-[var(--brand-blue)] px-7 py-8 text-center text-white shadow-[0_18px_36px_rgba(7,89,139,0.16)] ${className}`}
+      className={`relative overflow-hidden rounded-[22px] bg-[var(--brand-blue)] px-7 py-8 text-center text-white shadow-card ${className}`}
     >
       <span
         className="absolute -right-8 -top-9 size-28 rounded-full bg-white/5"
@@ -94,7 +94,7 @@ const TourFinder = () => {
     >
       <div className="site-container relative z-10 mx-auto px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[14px] font-[500] uppercase tracking-[0.22em] text-[var(--brand-green)]">
+          <p className="text-[14px] font-[500] uppercase tracking-[0.22em] text-accent-strong">
             Plan your escape
           </p>
           <h2 className=" text-[28px] font-[500] leading-[1.08] tracking-tight text-[var(--brand-blue)] sm:text-[52px] lg:text-[50px]">
@@ -106,7 +106,7 @@ const TourFinder = () => {
           <TourPackageCard className="hidden lg:block" />
 
           <form
-            className="rounded-[26px] border-[10px] border-[var(--brand-blue)]/8 bg-white p-5 shadow-[0_22px_50px_rgba(7,89,139,0.1)] sm:p-8 lg:p-10"
+            className="rounded-[26px] border-[10px] border-[var(--brand-blue)]/8 bg-white p-5 shadow-card sm:p-8 lg:p-10"
             onSubmit={handleSubmit}
           >
             <label
@@ -117,7 +117,7 @@ const TourFinder = () => {
             </label>
             <div className="relative mt-2">
               <FiMapPin
-                className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-[20px] text-[var(--brand-green)]"
+                className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-[20px] text-accent-strong"
                 aria-hidden="true"
               />
               <select
@@ -146,7 +146,7 @@ const TourFinder = () => {
                 </label>
                 <div className="relative mt-2">
                   <FiCalendar
-                    className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-[20px] text-[var(--brand-green)]"
+                    className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-[20px] text-accent-strong"
                     aria-hidden="true"
                   />
                   <input
@@ -191,7 +191,7 @@ const TourFinder = () => {
             </label>
             <div className="relative mt-2">
               <FiUsers
-                className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-[20px] text-[var(--brand-green)]"
+                className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-[20px] text-accent-strong"
                 aria-hidden="true"
               />
               <select
@@ -212,10 +212,10 @@ const TourFinder = () => {
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <button
                 type="submit"
-                className="inline-flex min-h-[58px] items-center gap-4 rounded-full bg-[var(--brand-green)] py-2 pl-6 pr-2 text-[17px] font-[500] text-white transition  hover:bg-[var(--brand-blue)] focus:outline-none focus:ring-4 focus:ring-[var(--brand-green)]/30"
+                className="inline-flex min-h-[58px] items-center gap-4 rounded-full bg-[var(--brand-green)] py-2 pl-6 pr-2 text-[17px] font-[500] text-accent-contrast transition  hover:bg-[var(--brand-blue)] hover:text-white focus:outline-none focus:ring-4 focus:ring-[var(--brand-green)]/30"
               >
                 Search tours
-                <span className="flex size-10 items-center justify-center rounded-full bg-white text-[21px] text-[var(--brand-green)]">
+                <span className="flex size-10 items-center justify-center rounded-full bg-white text-[21px] text-accent-strong">
                   <FiArrowRight aria-hidden="true" />
                 </span>
               </button>

@@ -15,7 +15,7 @@ const highlights = [
 
 const FlightBanner = () => {
   return (
-    <section className="relative isolate min-h-[520px] overflow-hidden bg-[#eef8ff]">
+    <section className="relative isolate min-h-[520px] overflow-hidden bg-blue-soft">
       <div
         className="absolute inset-0 -z-20 bg-cover bg-center"
         style={{
@@ -31,7 +31,7 @@ const FlightBanner = () => {
       <div className="absolute inset-x-0 top-0 z-10 h-1.5 bg-[var(--brand-green)]" />
 
       <div className="site-container flex min-h-[520px] flex-col justify-center px-5 py-16 sm:px-8 lg:px-12">
-        <p className="mb-5 w-full rounded-[6px] border-l-4 border-[var(--brand-green)] bg-white/90 px-4 py-3 text-[12px] font-[800] leading-5 text-[var(--brand-blue)] shadow-[0_8px_24px_rgba(7,89,139,0.08)] sm:text-[13px]">
+        <p className="mb-5 w-full rounded-[6px] border-l-4 border-[var(--brand-green)] bg-white/90 px-4 py-3 text-[12px] font-[800] leading-5 text-[var(--brand-blue)] shadow-card sm:text-[13px]">
           Important: We are an Independent Travel Assistance Platform and are
           not associated with any airline or any company.
         </p>
@@ -39,7 +39,7 @@ const FlightBanner = () => {
         <div className="w-full max-w-[710px]">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)]/10 px-4 py-2 text-[13px] font-[800] uppercase tracking-[0.12em] text-[var(--brand-blue)]">
             <FiClock
-              className="text-[16px] text-[var(--brand-green)]"
+              className="text-[16px] text-accent-strong"
               aria-hidden="true"
             />
             Flight planning made clearer
@@ -47,7 +47,7 @@ const FlightBanner = () => {
 
           <h1 className="font-sans text-[44px] font-[900] uppercase leading-[0.98] tracking-normal text-[var(--brand-blue)] sm:text-[58px] lg:text-[64px] xl:text-[70px]">
             Fly Where
-            <span className="block text-[var(--brand-green)]">Plans Take Off</span>
+            <span className="block text-accent-strong">Plans Take Off</span>
           </h1>
 
           <p className="mt-5 max-w-[560px] text-[17px] font-[600] leading-7 text-slate-700 sm:text-[19px]">
@@ -61,7 +61,7 @@ const FlightBanner = () => {
                 key={label}
                 className="flex min-w-[150px] items-center gap-2.5"
               >
-                <span className="flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-full bg-[var(--brand-green)] text-[var(--brand-blue)] shadow-[0_8px_18px_rgba(168,201,70,0.32)]">
+                <span className="flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-full bg-[var(--brand-green)] text-[var(--brand-blue)] shadow-button">
                   <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
                 </span>
                 <span className="leading-[1.08]">

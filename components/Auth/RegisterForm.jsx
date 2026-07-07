@@ -52,7 +52,7 @@ export default function RegisterForm() {
         <h1 className="mt-6 font-poppins-semibold text-2xl text-heading">
           Create Account
         </h1>
-        <p className="mt-2 text-sm text-light-grey">
+        <p className="mt-2 text-sm text-light">
           Register to book flights and manage trips.
         </p>
       </div>
@@ -69,7 +69,7 @@ export default function RegisterForm() {
             Full Name
           </span>
           <span className={inputWrap}>
-            <User className="mr-2 size-4 text-light-grey" />
+            <User className="mr-2 size-4 text-light" />
             <input
               className="w-full bg-transparent text-sm text-heading outline-none"
               onChange={(event) => update("name", event.target.value)}
@@ -84,7 +84,7 @@ export default function RegisterForm() {
             Email Address
           </span>
           <span className={inputWrap}>
-            <Mail className="mr-2 size-4 text-light-grey" />
+            <Mail className="mr-2 size-4 text-light" />
             <input
               className="w-full bg-transparent text-sm text-heading outline-none"
               onChange={(event) => update("email", event.target.value)}
@@ -100,7 +100,7 @@ export default function RegisterForm() {
             Password
           </span>
           <span className={inputWrap}>
-            <Lock className="mr-2 size-4 text-light-grey" />
+            <Lock className="mr-2 size-4 text-light" />
             <input
               className="w-full bg-transparent text-sm text-heading outline-none"
               minLength={6}
@@ -122,7 +122,7 @@ export default function RegisterForm() {
         </button>
       </form>
 
-      <p className="mt-6 text-center text-sm text-light-grey">
+      <p className="mt-6 text-center text-sm text-light">
         Already have an account?{" "}
         <Link className="font-poppins-semibold text-blue" href="/login">
           Sign in

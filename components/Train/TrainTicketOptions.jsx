@@ -63,7 +63,7 @@ const TrainTicketOptions = () => {
       <div className="site-container px-5 sm:px-8 lg:px-12">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-[13px] font-[800] uppercase tracking-[0.14em] text-[var(--brand-green)]">
+            <p className="text-[13px] font-[800] uppercase tracking-[0.14em] text-accent-strong">
               Rail choices
             </p>
             <h2 className="mt-2 text-[30px] font-[800] leading-tight text-[var(--brand-blue)] sm:text-[36px]">
@@ -72,7 +72,7 @@ const TrainTicketOptions = () => {
           </div>
 
           <Link
-            className="inline-flex h-12 w-fit items-center gap-3 rounded-[6px] border border-[var(--brand-blue)]/35 px-6 text-[14px] font-[700] text-[var(--brand-blue)] transition-colors hover:border-[var(--brand-green)] hover:text-[var(--brand-green)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-green)]"
+            className="inline-flex h-12 w-fit items-center gap-3 rounded-[6px] border border-[var(--brand-blue)]/35 px-6 text-[14px] font-[700] text-[var(--brand-blue)] transition-colors hover:border-[var(--brand-green)] hover:text-accent-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-green)]"
             href="/contact-us/"
           >
             Request Train Help
@@ -84,7 +84,7 @@ const TrainTicketOptions = () => {
           {ticketOptions.map((ticket) => (
             <article
               key={ticket.name}
-              className="flex min-h-[320px] flex-col rounded-[7px] border-2 border-gray-200 bg-white px-6 py-4 text-center transition duration-200 hover:-translate-y-0.5 hover:border-[var(--brand-green)]/70 hover:shadow-[0_18px_45px_rgba(7,89,139,0.12)]"
+              className="flex min-h-[320px] flex-col rounded-[7px] border-2 border-gray-200 bg-white px-6 py-4 text-center transition duration-200 hover:-translate-y-0.5 hover:border-[var(--brand-green)]/70 hover:shadow-card-hover"
             >
               <div className="flex flex-1 items-center justify-center py-3">
                 <div
@@ -105,7 +105,7 @@ const TrainTicketOptions = () => {
               <a
                 href={trainContact.phone.href}
                 aria-label={`Call now to check train options for ${ticket.name}`}
-                className="mt-5 flex h-9 items-center justify-center gap-2 rounded-[4px] bg-[var(--brand-blue)] text-[12px] font-[800] uppercase text-white transition-colors hover:bg-[var(--brand-green)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-green)]"
+                className="mt-5 flex h-9 items-center justify-center gap-2 rounded-[4px] bg-[var(--brand-blue)] text-[12px] font-[800] uppercase text-white transition-colors hover:bg-[var(--brand-green)] hover:text-accent-contrast focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-green)]"
               >
                 <FiPhoneCall className="h-4 w-4" aria-hidden="true" />
                 Get a Quote

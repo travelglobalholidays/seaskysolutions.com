@@ -2,7 +2,7 @@ import SearchForm from "@/components/Flights/SearchForm";
 
 const AirlineSeoHero = ({ page }) => {
   return (
-    <section className="relative isolate overflow-hidden bg-[#eef8ff]">
+    <section className="relative isolate overflow-hidden bg-blue-soft">
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-20 bg-cover bg-center"
@@ -18,19 +18,19 @@ const AirlineSeoHero = ({ page }) => {
       <div className="absolute inset-x-0 top-0 h-1.5 bg-[var(--brand-green)]" />
 
       <div className="site-container px-5 pb-12 pt-12 sm:px-8 lg:px-12 lg:pb-16 lg:pt-16">
-        <p className="mb-5 w-full rounded-[6px] border-l-4 border-[var(--brand-green)] bg-white/90 px-4 py-3 text-[12px] font-[800] leading-5 text-[var(--brand-blue)] shadow-[0_8px_24px_rgba(7,89,139,0.08)] sm:text-[13px]">
-          Important: We are an Independent Travel Assistance Platform and are
-          not associated with any airline or any company.
+        <p className="mb-5 w-full rounded-[6px] border-l-4 border-[var(--brand-green)] bg-white/90 px-4 py-3 text-[12px] font-[600] leading-5 text-[var(--brand-blue)] shadow-card sm:text-[13px]">
+          Important: Sea Sky Solutions LLC is an independent travel platform and
+          is not affiliated with or endorsed by any airline.
         </p>
 
         <div className="max-w-[780px]">
-          <p className="mb-5 inline-flex rounded-full bg-[var(--brand-blue)]/10 px-4 py-2 text-[12px] font-[800] uppercase tracking-[0.12em] text-[var(--brand-blue)]">
+          {/* <p className="mb-5  inline-flex rounded-full bg-[var(--brand-blue)]/10 px-4 py-2 text-[12px] font-[650] uppercase tracking-[0.08em] text-[var(--brand-blue)]">
             {page.badge}
-          </p>
-          <h1 className="text-[40px] font-[900] uppercase leading-[1] text-[var(--brand-blue)] sm:text-[54px] lg:text-[64px]">
-            {page.title}
+          </p> */}
+          <h1 className="text-[34px] font-[700] leading-[1.08] text-[var(--brand-blue)] sm:text-[46px] lg:text-[56px]">
+            {page.heroTitle ?? page.title}
           </h1>
-          <p className="mt-5 max-w-[680px] text-[17px] font-[600] leading-8 text-slate-700 sm:text-[19px]">
+          <p className="mt-5 max-w-[680px] text-[16px] font-[450] leading-8 text-slate-700 sm:text-[18px]">
             {page.heroText}
           </p>
         </div>

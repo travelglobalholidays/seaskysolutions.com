@@ -73,7 +73,7 @@ const favoriteTrips = [
 
 const TravelerFavorites = () => {
   return (
-    <section id="traveler-favorites" className="relative isolate  bg-[#f7fafb] py-12 sm:py-16 lg:py-20">
+    <section id="traveler-favorites" className="relative isolate  bg-light-grey py-12 sm:py-16 lg:py-20">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -89,7 +89,7 @@ const TravelerFavorites = () => {
 
       <div className="site-container relative z-10 mx-auto px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="flex items-center justify-center gap-2 text-[14px] font-[500] uppercase tracking-[0.2em] text-[var(--brand-green)]">
+          <p className="flex items-center justify-center gap-2 text-[14px] font-[500] uppercase tracking-[0.2em] text-accent-strong">
             <FiStar className="text-[17px]" aria-hidden="true" />
             Traveler Favorites
           </p>
@@ -125,12 +125,12 @@ const TravelerFavorites = () => {
             <SwiperSlide key={trip.title} className="!h-auto">
               <a
                 href={siteContact.phone.href}
-                className="group relative mt-5 block h-[calc(100%-20px)] rounded-[22px] border border-[var(--brand-blue)]/15 bg-white p-4 shadow-[0_7px_0_rgba(5,54,85,0.14)] transition duration-300  hover:border-[var(--brand-green)]/60 hover:shadow-[0_16px_28px_rgba(5,54,85,0.18)] focus:outline-none focus:ring-4 focus:ring-[var(--brand-green)]/20 sm:p-5"
+                className="group relative mt-5 block h-[calc(100%-20px)] rounded-[22px] border border-[var(--brand-blue)]/15 bg-white p-4 shadow-card transition duration-300  hover:border-[var(--brand-green)]/60 hover:shadow-card-hover focus:outline-none focus:ring-4 focus:ring-[var(--brand-green)]/20 sm:p-5"
                 aria-label={`Explore ${trip.title} in ${trip.location}`}
               >
-                <span className="absolute -top-5 left-5 z-10 inline-flex items-center gap-2 rounded-full border border-[var(--brand-blue)]/15 bg-white px-4 py-2 text-[14px] font-[500] text-[var(--brand-blue)]/65 shadow-[0_4px_12px_rgba(5,54,85,0.06)]">
+                <span className="absolute -top-5 left-5 z-10 inline-flex items-center gap-2 rounded-full border border-[var(--brand-blue)]/15 bg-white px-4 py-2 text-[14px] font-[500] text-[var(--brand-blue)]/65 shadow-card">
                   <FiMapPin
-                    className="text-[18px] text-[var(--brand-green)]"
+                    className="text-[18px] text-accent-strong"
                     aria-hidden="true"
                   />
                   {trip.location}
@@ -151,7 +151,7 @@ const TravelerFavorites = () => {
                       </h3>
                       <span className="flex shrink-0 items-center gap-1 rounded-full bg-[var(--brand-blue)]/7 px-2 py-1 text-[14px] font-[500] text-[var(--brand-blue)]">
                         <FiStar
-                          className="fill-[var(--brand-green)] text-[var(--brand-green)]"
+                          className="fill-accent-strong text-accent-strong"
                           aria-hidden="true"
                         />
                         {trip.rating}
@@ -159,14 +159,14 @@ const TravelerFavorites = () => {
                     </div>
                     <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-b border-[var(--brand-blue)]/15 pb-3">
                       <p className="text-[16px] text-[var(--brand-blue)]/65">
-                        <span className="text-[22px] font-[700] text-[var(--brand-green)]">
+                        <span className="text-[22px] font-[700] text-accent-strong">
                           {trip.price}
                         </span>{" "}
                         / Traveler
                       </p>
                       <p className="flex items-center gap-2 text-[14px] font-[500] text-[var(--brand-blue)]">
                         <FiCalendar
-                          className="text-[15px] text-[var(--brand-green)]"
+                          className="text-[15px] text-accent-strong"
                           aria-hidden="true"
                         />
                         {trip.duration}

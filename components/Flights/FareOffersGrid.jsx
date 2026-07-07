@@ -207,13 +207,13 @@ const RouteDetails = ({ code, city, date, isDestination }) => (
     <p className="font-poppins-semibold text-lg leading-none text-heading">
       {code}
     </p>
-    <p className="mt-1 truncate text-xs text-light-grey">{city}</p>
+    <p className="mt-1 truncate text-xs text-light">{city}</p>
     <p className="mt-1 text-xs font-poppins-medium text-heading">{date}</p>
   </div>
 );
 
 const FareCard = ({ disabled, offer, onSearch }) => (
-  <article className="overflow-hidden rounded-[18px] border border-blue/10 bg-white shadow-[0_10px_24px_rgba(7,89,139,0.07)] transition-all duration-300 hover:border-blue/25 hover:shadow-[0_14px_28px_rgba(7,89,139,0.14)]">
+  <article className="overflow-hidden rounded-[18px] border border-blue/10 bg-white shadow-card transition-all duration-300 hover:border-blue/25 hover:shadow-card-hover">
     <div className="grid grid-cols-[52px_minmax(0,1fr)] gap-3 px-4 py-4 sm:px-5">
       <div className="flex size-12 items-center justify-center overflow-hidden rounded-xl bg-blue/5 p-1.5">
         <Image
@@ -238,7 +238,7 @@ const FareCard = ({ disabled, offer, onSearch }) => (
             <PlaneIcon />
             <span className="h-px flex-1 bg-blue/20" />
           </div>
-          <p className="mt-2 text-[10px] font-poppins-medium text-light-grey">
+          <p className="mt-2 text-[10px] font-poppins-medium text-light">
             {offer.arrivalDate ? "Round trip" : "One way"}
           </p>
         </div>
@@ -253,7 +253,7 @@ const FareCard = ({ disabled, offer, onSearch }) => (
     </div>
 
     <div className="flex items-center justify-between gap-3 border-t border-subtle bg-blue/[0.025] px-4 py-3 sm:px-5">
-      <p className="text-xs text-light-grey">
+      <p className="text-xs text-light">
         <span className="block font-poppins-semibold text-sm text-heading">
           Route inspiration
         </span>
@@ -298,7 +298,7 @@ const FareOffersGrid = () => {
 
   return (
     <section
-      className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#eef8ff_100%)] py-12 sm:py-14"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,var(--card-bg)_0%,var(--surface-blue)_100%)] py-12 sm:py-14"
       id="featured-fares"
     >
       <DealSearchOverlay deal={searchingDeal} />
@@ -312,7 +312,7 @@ const FareOffersGrid = () => {
         <h2 className="mt-2 font-poppins-semibold text-[34px] leading-tight text-heading sm:text-[42px]">
           Explore popular flight routes
         </h2>
-        <p className="mt-2 text-sm text-light-grey sm:text-base">
+        <p className="mt-2 text-sm text-light sm:text-base">
           Route examples are for travel planning. Search live availability or
           call Sea Sky Solutions at{" "}
           <a

@@ -45,7 +45,7 @@ export default function PaymentPage() {
       <Header />
       <main className="min-h-screen bg-light-grey py-8">
         <div className="container">
-          <div className="mb-5 text-sm text-light-grey">
+          <div className="mb-5 text-sm text-light">
             Booking / <span className="text-heading">Payment</span>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">

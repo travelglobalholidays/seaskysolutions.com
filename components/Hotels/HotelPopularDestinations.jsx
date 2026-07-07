@@ -42,7 +42,7 @@ const HotelPopularDestinations = () => {
           <div className="max-w-[760px]">
             <h2 className="flex items-center gap-3 text-start text-[24px] font-[800] leading-tight text-[var(--brand-blue)] sm:text-[26px]">
               <FiMapPin
-                className="h-6 w-6 shrink-0 text-[var(--brand-green)]"
+                className="h-6 w-6 shrink-0 text-accent-strong"
                 aria-hidden="true"
               />
               Popular Hotel Destinations
@@ -60,7 +60,7 @@ const HotelPopularDestinations = () => {
               key={destination.city}
               href={hotelContact.phone.href}
               aria-label={`Call for hotel booking in ${destination.city}`}
-              className="group relative block aspect-[16/10] overflow-hidden rounded-[7px] bg-[var(--brand-blue)] shadow-[0_10px_24px_rgba(7,89,139,0.14)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-green)]"
+              className="group relative block aspect-[16/10] overflow-hidden rounded-[7px] bg-[var(--brand-blue)] shadow-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-green)]"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110 group-focus-visible:scale-110"
@@ -83,7 +83,7 @@ const HotelPopularDestinations = () => {
                 </div>
                 <p className="shrink-0 text-[14px] font-[800] leading-none">
                   from{" "}
-                  <span className="text-[18px] font-[800] text-[var(--brand-green)]">
+                  <span className="text-[18px] font-[800] text-accent-on-dark">
                     ${destination.price}
                   </span>
                 </p>

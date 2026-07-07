@@ -203,7 +203,7 @@ const Group = ({ onAdd, onRemove, onUpdate, title, travellers, type }) => (
         />
       ))
     ) : (
-      <p className="text-sm text-light-grey">No {title.toLowerCase()} travellers added.</p>
+      <p className="text-sm text-light">No {title.toLowerCase()} travellers added.</p>
     )}
   </div>
 );

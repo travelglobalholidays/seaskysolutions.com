@@ -44,7 +44,7 @@ const TourCategories = () => {
       <div className="relative z-10 mx-auto max-w-[1125px] px-5 sm:px-8 lg:px-0">
         <div className="flex flex-col gap-5 text-white sm:flex-row sm:items-end sm:justify-between sm:gap-8">
           <div>
-            <p className="flex items-center gap-2 text-[14px] font-[500] uppercase tracking-[0.22em] text-[var(--brand-green)]">
+            <p className="flex items-center gap-2 text-[14px] font-[500] uppercase tracking-[0.22em] text-accent-on-dark">
               <FiCompass className="text-[17px]" aria-hidden="true" />
               Tour categories
             </p>
@@ -79,18 +79,18 @@ const TourCategories = () => {
                   aria-label={category.title}
                 />
               </div>
-              <div className="relative z-10 -mt-7 flex min-h-[90px] items-center justify-between gap-4 rounded-t-[30px] rounded-b-[20px] bg-[#eef4f6] px-5 py-4 text-[var(--brand-blue)] shadow-[0_12px_24px_rgba(4,50,82,0.05)]">
+              <div className="relative z-10 -mt-7 flex min-h-[90px] items-center justify-between gap-4 rounded-t-[30px] rounded-b-[20px] bg-section-muted px-5 py-4 text-[var(--brand-blue)] shadow-card">
                 <div>
                   <p className="text-[15px] font-[500] leading-5 text-[var(--brand-blue)]/65">
                     {category.destinations}
                   </p>
-                  <p className="mt-1 text-[16px] font-[700] text-[var(--brand-green)]">
+                  <p className="mt-1 text-[16px] font-[700] text-accent-strong">
                     From {category.price}
                   </p>
                 </div>
                 <a
                   href={siteContact.phone.href}
-                  className="flex size-11 shrink-0 items-center justify-center rounded-[10px] bg-[var(--brand-blue)]/8 text-[22px] text-[var(--brand-blue)] transition-colors hover:bg-[var(--brand-green)] hover:text-white focus:outline-none focus:ring-2 focus:ring-[var(--brand-green)]"
+                  className="flex size-11 shrink-0 items-center justify-center rounded-[10px] bg-[var(--brand-blue)]/8 text-[22px] text-[var(--brand-blue)] transition-colors hover:bg-[var(--brand-green)] hover:text-accent-contrast focus:outline-none focus:ring-2 focus:ring-[var(--brand-green)]"
                   aria-label={`Explore ${category.title}`}
                 >
                   <FiArrowRight aria-hidden="true" />

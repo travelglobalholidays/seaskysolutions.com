@@ -29,7 +29,7 @@ const AddonCard = ({ description, icon, onChange, price, selected, title }) => (
             <h3 className="text-lg font-poppins-semibold text-heading">
               {title}
             </h3>
-            <p className="mt-1 text-sm text-light-grey">{description}</p>
+            <p className="mt-1 text-sm text-light">{description}</p>
           </div>
           <p className="text-xl font-poppins-semibold text-blue">
             ${price.toFixed(2)}
@@ -111,7 +111,7 @@ export default function ServicesAddons({ booking, setBooking }) {
         <h2 className="font-poppins-semibold text-2xl text-heading">
           Enhance Your Journey
         </h2>
-        <p className="mt-2 text-sm text-light-grey">
+        <p className="mt-2 text-sm text-light">
           Add services for comfort, protection, and faster travel support.
         </p>
       </div>
@@ -125,7 +125,7 @@ export default function ServicesAddons({ booking, setBooking }) {
             <h3 className="text-lg font-poppins-semibold text-heading">
               Additional Baggage
             </h3>
-            <p className="mt-1 text-sm text-light-grey">
+            <p className="mt-1 text-sm text-light">
               Add checked bags at $50 per bag per passenger.
             </p>
             <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -138,7 +138,7 @@ export default function ServicesAddons({ booking, setBooking }) {
                     <span className="font-poppins-semibold text-heading">
                       {label}
                     </span>
-                    <span className="text-sm text-light-grey">
+                    <span className="text-sm text-light">
                       ${addons[key] * 50 * passengerCount}
                     </span>
                   </div>

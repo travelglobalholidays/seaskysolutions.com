@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { siteContact } from "@/config/siteContact";
+import Image from "next/image";
 import { FiChevronLeft, FiChevronRight, FiPhoneCall } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -112,7 +112,7 @@ const HeroBanner = () => {
 
                       <a
                         href={siteContact.phone.href}
-                        className="mt-7 inline-flex min-h-[54px] w-full max-w-[280px] items-center justify-center gap-3 rounded-full border border-[var(--brand-blue)]/10 bg-[var(--brand-green)] px-4 text-[15px] font-[700] text-white transition-colors hover:border-[var(--brand-green)] hover:bg-white hover:text-[var(--brand-blue)] sm:mt-9 sm:w-[240px] sm:max-w-none sm:justify-start lg:min-h-[66px] lg:px-5 lg:text-[18px]"
+                        className="mt-7 inline-flex min-h-[54px] w-full max-w-[280px] items-center justify-center gap-3 rounded-full border border-[var(--brand-blue)]/10 bg-[var(--brand-green)] px-4 text-[15px] font-[700] text-accent-contrast transition-colors hover:border-[var(--brand-green)] hover:bg-white hover:text-[var(--brand-blue)] sm:mt-9 sm:w-[240px] sm:max-w-none sm:justify-start lg:min-h-[66px] lg:px-5 lg:text-[18px]"
                         aria-label={`Call toll free number ${siteContact.phone.display}`}
                       >
                         <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-blue)] text-[20px] text-white lg:size-11">
@@ -133,12 +133,12 @@ const HeroBanner = () => {
                         className="absolute -left-40 top-20 w-[135px] max-w-none rotate-[-6deg] opacity-95 lg:-left-44 lg:top-24 lg:w-[150px]"
                         aria-hidden="true"
                       />
-                      <div className="relative w-[240px] rounded-[14px] bg-white px-8 py-7 text-center text-[var(--brand-blue)] shadow-[0_22px_60px_rgba(0,0,0,0.2)]">
+                      <div className="relative w-[240px] rounded-[14px] bg-white px-8 py-7 text-center text-[var(--brand-blue)] shadow-modal">
                         <span className="absolute -left-3 top-1/2 size-6 -translate-y-1/2 rounded-full border-[6px] border-white bg-[var(--brand-green)]" />
                         <p className="text-[20px] font-[700] leading-7">
                           {slide.priceLabel}
                         </p>
-                        <p className="mt-3 text-[30px] font-[900] text-[var(--brand-green)]">
+                        <p className="mt-3 text-[30px] font-[900] text-accent-strong">
                           {slide.price}
                         </p>
                         <div className="my-3 h-px bg-black/15" />
@@ -157,14 +157,14 @@ const HeroBanner = () => {
 
       <button
         type="button"
-        className="hero-slider-prev absolute left-4 top-1/2 z-20 hidden size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/25 text-[34px] text-white backdrop-blur transition-colors hover:bg-[var(--brand-green)] focus:outline-none focus:ring-2 focus:ring-white md:flex xl:left-14 xl:size-10"
+        className="hero-slider-prev absolute left-4 top-1/2 z-20 hidden size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/25 text-[34px] text-white backdrop-blur transition-colors hover:bg-[var(--brand-green)] hover:text-accent-contrast focus:outline-none focus:ring-2 focus:ring-white md:flex xl:left-14 xl:size-10"
         aria-label="Previous hero slide"
       >
         <FiChevronLeft aria-hidden="true" />
       </button>
       <button
         type="button"
-        className="hero-slider-next absolute right-4 top-1/2 z-20 hidden size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/25 text-[34px] text-white backdrop-blur transition-colors hover:bg-[var(--brand-green)] focus:outline-none focus:ring-2 focus:ring-white md:flex xl:right-14 xl:size-10"
+        className="hero-slider-next absolute right-4 top-1/2 z-20 hidden size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/25 text-[34px] text-white backdrop-blur transition-colors hover:bg-[var(--brand-green)] hover:text-accent-contrast focus:outline-none focus:ring-2 focus:ring-white md:flex xl:right-14 xl:size-10"
         aria-label="Next hero slide"
       >
         <FiChevronRight aria-hidden="true" />

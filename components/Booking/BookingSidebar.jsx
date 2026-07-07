@@ -9,7 +9,7 @@ import {
 
 const Row = ({ children, value }) => (
   <div className="flex justify-between gap-4 border-b border-subtle pb-2 text-sm">
-    <span className="text-light-grey">{children}</span>
+    <span className="text-light">{children}</span>
     <span className="font-poppins-semibold text-heading">{value}</span>
   </div>
 );
@@ -18,7 +18,7 @@ export default function BookingSidebar({ booking }) {
   if (!booking) {
     return (
       <aside className="rounded-xl border border-subtle bg-white p-6 shadow-theme">
-        <p className="text-center text-sm text-light-grey">
+        <p className="text-center text-sm text-light">
           Loading price details...
         </p>
       </aside>
@@ -66,7 +66,7 @@ export default function BookingSidebar({ booking }) {
               {formatMoney(booking.totalAmount || snapshot.totalAmount, currency)}
             </span>
           </div>
-          <p className="border-t border-subtle pt-3 text-xs text-light-grey">
+          <p className="border-t border-subtle pt-3 text-xs text-light">
             All taxes and fees included.
           </p>
         </div>

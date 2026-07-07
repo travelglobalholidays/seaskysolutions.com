@@ -145,12 +145,12 @@ export default function PaymentDetails({ booking }) {
               value={payment.cvv}
             />
           </div>
-          <div className="flex items-center gap-2 text-xs text-light-grey">
+          <div className="flex items-center gap-2 text-xs text-light">
             <Lock className="size-4 text-blue" />
             Your payment information is encrypted and secure.
           </div>
           <button
-            className="w-full rounded-lg bg-green py-4 font-poppins-semibold text-white transition hover:bg-green/90"
+            className="w-full rounded-lg bg-green py-4 font-poppins-semibold text-accent-contrast transition hover:bg-green/90"
             type="submit"
           >
             Review & Complete Booking
@@ -188,7 +188,7 @@ export default function PaymentDetails({ booking }) {
                       **** **** **** {payment.cardNumber.slice(-4)}
                     </p>
                   </div>
-                  <p className="text-sm text-light-grey">
+                  <p className="text-sm text-light">
                     By confirming, you authorize Sea Sky Solutions to complete this
                     booking and save masked payment details.
                   </p>

@@ -29,7 +29,7 @@ const DealSearchOverlay = ({ deal }) => {
           </span>
         </p>
 
-        <p className="mt-3 text-xs text-light-grey">
+        <p className="mt-3 text-xs text-light">
           Please wait, this may take a few seconds...
         </p>
 

@@ -46,7 +46,7 @@ export default function AddonsPage() {
       <Header />
       <main className="min-h-screen bg-light-grey py-8">
         <div className="container">
-          <div className="mb-5 text-sm text-light-grey">
+          <div className="mb-5 text-sm text-light">
             Booking / <span className="text-heading">Add-on Services</span>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
@@ -63,7 +63,7 @@ export default function AddonsPage() {
                   <ArrowRight className="size-4" />
                 </button>
               </div>
-              <div className="flex items-center justify-center gap-2 text-sm text-light-grey">
+              <div className="flex items-center justify-center gap-2 text-sm text-light">
                 <Shield className="size-4 text-blue" />
                 Secure checkout
                 <Lock className="size-4 text-blue" />

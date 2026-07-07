@@ -20,9 +20,9 @@ export const generateMetadata = async ({ params }) => {
 
   if (!page) {
     return createPageMetadata({
-      title: "Airline Flight Booking Assistance",
+      title: "Airline Flight Information",
       description:
-        "Airline flight booking assistance from Sea Sky Solutions LLC.",
+        "Airline flight information from Sea Sky Solutions LLC.",
       path: "/airline/lcc",
     });
   }

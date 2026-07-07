@@ -43,7 +43,7 @@ const helpCards = [
   {
     title: "Travel support",
     description:
-      "Speak with Sea Sky Solutions for route planning, fare review, and booking assistance.",
+      "Speak with Sea Sky Solutions for route planning, fare review, and booking details.",
     Icon: RefreshCw,
   },
 ];
@@ -53,18 +53,18 @@ const AirlineSeoMobileHelp = ({ page }) => {
   const phoneHref = getPhoneHref();
 
   return (
-    <section className="block bg-[#eef8ff] px-4 py-6 md:hidden">
+    <section className="block bg-blue-soft px-4 py-6 md:hidden">
       <div className="mx-auto max-w-md">
         <div className="mb-4">
-          <p className="text-xs font-[900] uppercase tracking-wide text-[var(--brand-blue)]">
-            Need help with {page.label.toLowerCase()}?
+          <p className="text-xs font-[650] uppercase tracking-wide text-[var(--brand-blue)]">
+            {page.label} details
           </p>
-          <h2 className="mt-1 text-2xl font-[900] leading-tight text-[var(--brand-blue)]">
-            Call Sea Sky Solutions for flight booking support
+          <h2 className="mt-1 text-2xl font-[700] leading-tight text-[var(--brand-blue)]">
+            Review your flight before booking
           </h2>
           <p className="mt-2 text-sm leading-6 text-slate-700">
-            Tap any option to speak with our support team at{" "}
-            <span className="font-[900] text-[var(--brand-blue)]">
+            Tap any option to discuss route, fare, and itinerary details at{" "}
+            <span className="font-[700] text-[var(--brand-blue)]">
               {phoneDisplay}
             </span>
             .
@@ -75,7 +75,7 @@ const AirlineSeoMobileHelp = ({ page }) => {
           {helpCards.map(({ title, description, Icon }) => (
             <a
               aria-label={`Call Sea Sky Solutions at ${phoneDisplay} for ${title}`}
-              className="group flex min-h-28 items-center gap-3 rounded-[8px] border border-[var(--brand-blue)]/10 bg-white p-4 shadow-[0_12px_30px_rgba(7,89,139,0.08)] transition active:scale-[0.99]"
+              className="group flex min-h-28 items-center gap-3 rounded-[8px] border border-[var(--brand-blue)]/10 bg-white p-4 shadow-card transition active:scale-[0.99]"
               href={phoneHref}
               key={title}
             >
@@ -84,7 +84,7 @@ const AirlineSeoMobileHelp = ({ page }) => {
               </span>
 
               <span className="min-w-0 flex-1">
-                <span className="block text-base font-[900] leading-snug text-[var(--brand-blue)]">
+                <span className="block text-base font-[700] leading-snug text-[var(--brand-blue)]">
                   {title}
                 </span>
                 <span className="mt-1 block text-sm leading-5 text-slate-700">
@@ -94,7 +94,7 @@ const AirlineSeoMobileHelp = ({ page }) => {
 
               <ArrowRight
                 aria-hidden="true"
-                className="h-5 w-5 shrink-0 text-[var(--brand-green)] transition group-active:translate-x-0.5"
+                className="h-5 w-5 shrink-0 text-accent-strong transition group-active:translate-x-0.5"
               />
             </a>
           ))}

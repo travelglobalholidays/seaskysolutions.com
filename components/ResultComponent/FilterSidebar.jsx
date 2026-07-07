@@ -205,7 +205,7 @@ export default function FlightFilterSidebar() {
   );
 
   const filterSectionClass =
-    "rounded-xl border border-blue/10 bg-white px-3.5 py-3 shadow-[0_8px_22px_rgba(35,21,191,0.045)]";
+    "rounded-xl border border-blue/10 bg-white px-3.5 py-3 shadow-card";
   const sectionToggleClass =
     "mb-2 flex w-full items-center justify-between gap-3 text-left";
 
@@ -480,13 +480,13 @@ export default function FlightFilterSidebar() {
           overflow-y-auto md:overflow-visible max-h-[100dvh] md:max-h-none shadow-2xl md:shadow-none
         `}
       >
-        <Card className="min-h-[100dvh] rounded-none border-0 border-r border-subtle bg-white shadow-none md:min-h-0 md:rounded-xl md:border md:border-blue/10 md:bg-[#fbfbff] md:shadow-theme">
+        <Card className="min-h-[100dvh] rounded-none border-0 border-r border-subtle bg-white shadow-none md:min-h-0 md:rounded-xl md:border md:border-blue/10 md:bg-light-grey md:shadow-theme">
           <CardContent className="space-y-3 p-4 md:p-4">
             {/* Header with Close Button */}
             <div className="rounded-xl border border-blue/10 bg-blue-soft p-3">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue shadow-[0_8px_18px_rgba(35,21,191,0.22)]">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue shadow-button">
                     <Filter className="w-4 h-4 text-white" />
                   </div>
                   <div>
@@ -721,7 +721,7 @@ export default function FlightFilterSidebar() {
                       onClick={() => handleTimeOfDayChange(id)}
                       className={`rounded-lg border p-2 text-left transition-all ${
                         selectedTimeOfDay.includes(id)
-                          ? "border-theme bg-theme-light shadow-[0_8px_18px_rgba(35,21,191,0.09)]"
+                          ? "border-theme bg-theme-light shadow-card"
                           : "border-subtle bg-white hover:border-theme/30 hover:bg-blue/5"
                       }`}
                     >
@@ -870,7 +870,7 @@ export default function FlightFilterSidebar() {
             {/* Apply Filters Button */}
             <button
               onClick={handleApplyFilters}
-              className="w-full rounded-lg bg-blue px-4 py-3 font-poppins-semibold text-white shadow-[0_12px_24px_rgba(35,21,191,0.18)] transition-all hover:bg-blue-dark"
+              className="w-full rounded-lg bg-blue px-4 py-3 font-poppins-semibold text-white shadow-button transition-all hover:bg-blue-dark"
             >
               Apply Filters {activeFilterCount > 0 && `(${activeFilterCount})`}
             </button>

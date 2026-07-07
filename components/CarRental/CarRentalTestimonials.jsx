@@ -29,7 +29,7 @@ const testimonials = [
 
 const Rating = () => {
   return (
-    <div className="mb-3 flex items-center gap-1 text-[var(--brand-green)]">
+    <div className="mb-3 flex items-center gap-1 text-accent-strong">
       {Array.from({ length: 5 }).map((_, index) => (
         <FiStar
           key={index}
@@ -58,7 +58,7 @@ const CarRentalTestimonials = () => {
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.name}
-              className="rounded-[10px] border border-[#d9e2ee] bg-white px-6 py-5 shadow-[0_8px_22px_rgba(7,89,139,0.06)] transition duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-green)]/60 hover:shadow-[0_18px_45px_rgba(7,89,139,0.12)]"
+              className="rounded-[10px] border border-subtle bg-white px-6 py-5 shadow-card transition duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-green)]/60 hover:shadow-card-hover"
             >
               <Rating />
               <p className="text-[13px] font-[700] leading-6 text-[var(--brand-blue)]">

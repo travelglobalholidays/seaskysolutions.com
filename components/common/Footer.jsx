@@ -26,14 +26,17 @@ const topPicks = [
   { label: "Terms & Conditions", href: "/terms-conditions" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Refund Policy", href: "/refund-policy" },
+  { label: "Cancellation Policy", href: "/cancellation-policy" },
 ];
 const usefulLinks = [
   { label: "Home", href: "/" },
+  { label: "Airlines", href: "/airline" },
   { label: "Find Your Tour", href: "/#find-your-tour" },
   { label: "Tour Categories", href: "/#tour-categories" },
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Traveler Favorites", href: "/#traveler-favorites" },
   { label: "Disclaimer", href: "/disclaimer" },
+  { label: "Cookie Policy", href: "/cookie-policy" },
 ];
 
 const FooterLinkList = ({ items }) => (
@@ -42,10 +45,10 @@ const FooterLinkList = ({ items }) => (
       <li key={item.label}>
         <Link
           href={item.href}
-          className="group inline-flex items-center gap-2 text-[16px] text-[var(--brand-blue)]/65 transition-colors hover:text-[var(--brand-green)]"
+          className="group inline-flex items-center gap-2 text-[16px] text-[var(--brand-blue)]/65 transition-colors hover:text-accent-strong"
         >
           <FiChevronRight
-            className="text-[18px] text-[var(--brand-blue)]/45 transition-transform group-hover:translate-x-1 group-hover:text-[var(--brand-green)]"
+            className="text-[18px] text-[var(--brand-blue)]/45 transition-transform group-hover:translate-x-1 group-hover:text-accent-strong"
             aria-hidden="true"
           />
           {item.label}
@@ -105,7 +108,7 @@ const Footer = () => {
               />
             </Link>
             <p className="mt-6 max-w-[280px] text-[16px] leading-7 text-[var(--brand-blue)]/65">
-              Discover, plan and go—your next remarkable journey starts here.
+              Discover, plan and go - your next remarkable journey starts here.
             </p>
           </div>
 
@@ -144,10 +147,10 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="mt-5 inline-flex min-h-[54px] items-center gap-4 rounded-full bg-[var(--brand-green)] py-2 pl-5 pr-2 text-[16px] font-[700] text-white transition hover:bg-[var(--brand-blue)] focus:outline-none focus:ring-4 focus:ring-[var(--brand-green)]/30"
+                className="mt-5 inline-flex min-h-[54px] items-center gap-4 rounded-full bg-[var(--brand-green)] py-2 pl-5 pr-2 text-[16px] font-[700] text-accent-contrast transition hover:bg-[var(--brand-blue)] hover:text-white focus:outline-none focus:ring-4 focus:ring-[var(--brand-green)]/30"
               >
                 Subscribe Us
-                <span className="flex size-10 items-center justify-center rounded-r-full rounded-l-[12px] bg-white text-[20px] text-[var(--brand-green)]">
+                <span className="flex size-10 items-center justify-center rounded-r-full rounded-l-[12px] bg-white text-[20px] text-accent-strong">
                   <FiArrowRight aria-hidden="true" />
                 </span>
               </button>
@@ -170,7 +173,7 @@ const Footer = () => {
                   {value}
                 </span>
               </span>
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--brand-blue)] text-[23px] text-[var(--brand-green)]">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-full  text-[23px] text-accent-strong">
                 <Icon aria-hidden="true" />
               </span>
             </a>
@@ -182,16 +185,16 @@ const Footer = () => {
             Disclaimer:
           </h2>
           <p className="mt-2">
-            Sea Sky Solutions LLC is an independent travel assistance agency
-            and is not affiliated with, endorsed by, or associated with any
-            airline, hotel, or travel service provider. All trademarks, brand
-            names, and logos are used for identification purposes only. Prices
-            and availability are subject to change without prior notice.
+            Sea Sky Solutions LLC is an independent travel assistance agency and
+            is not affiliated with, endorsed by, or associated with any airline,
+            hotel, or travel service provider. All trademarks, brand names, and
+            logos are used for identification purposes only. Prices and
+            availability are subject to change without prior notice.
           </p>
         </div>
 
         <div className="mt-9 flex flex-col gap-6 border-t border-[var(--brand-blue)]/10 pt-8 text-[16px] text-[var(--brand-blue)] sm:flex-row sm:items-center sm:justify-between lg:mt-10">
-          <p>© 2026 Sea Sky Solutions LLC. All Rights Reserved.</p>
+          <p>Copyright 2026 Sea Sky Solutions LLC. All Rights Reserved.</p>
           <nav
             className="order-first flex items-center gap-2 sm:order-none"
             aria-label="Social media links"
@@ -201,7 +204,7 @@ const Footer = () => {
                 key={label}
                 href="#"
                 aria-label={label}
-                className="flex size-12 items-center justify-center rounded-full border border-[var(--brand-blue)]/15 text-[19px] text-[var(--brand-blue)]/50 transition hover:border-[var(--brand-green)] hover:bg-[var(--brand-green)] hover:text-white"
+                className="flex size-12 items-center justify-center rounded-full border border-[var(--brand-blue)]/15 text-[19px] text-[var(--brand-blue)]/50 transition hover:border-[var(--brand-green)] hover:bg-[var(--brand-green)] hover:text-accent-contrast"
               >
                 <Icon aria-hidden="true" />
               </a>
@@ -209,7 +212,7 @@ const Footer = () => {
           </nav>
           <a
             href={currentContact.phone.href}
-            className="font-[500] transition hover:text-[var(--brand-green)]"
+            className="font-[500] transition hover:text-accent-strong"
           >
             Have a trip in mind? {currentContact.phone.display}
           </a>

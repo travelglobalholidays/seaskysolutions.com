@@ -60,9 +60,9 @@ const FareCard = ({ active, badge, fare, id, onSelect }) => (
           {feature.allowed ? (
             <CheckCircle className="mt-0.5 size-4 shrink-0 text-green" />
           ) : (
-            <XCircle className="mt-0.5 size-4 shrink-0 text-light-grey" />
+            <XCircle className="mt-0.5 size-4 shrink-0 text-light" />
           )}
-          <span className={feature.allowed ? "text-heading" : "text-light-grey"}>
+          <span className={feature.allowed ? "text-heading" : "text-light"}>
             {feature.text}
           </span>
         </li>

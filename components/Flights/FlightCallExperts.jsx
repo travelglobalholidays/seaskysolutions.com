@@ -14,9 +14,9 @@ const FlightCallExperts = () => {
   return (
     <section className="bg-white py-8 lg:pt-16">
       <div className="site-container px-5 sm:px-8 lg:px-12">
-        <div className="relative rounded-[7px] bg-[var(--brand-blue)] text-white shadow-[0_14px_30px_rgba(7,89,139,0.18)]">
+        <div className="relative rounded-[7px] bg-[var(--brand-blue)] text-white shadow-card">
           <div className="absolute inset-0 overflow-hidden rounded-[7px]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_21%_8%,rgba(255,255,255,0.14),transparent_26%),linear-gradient(90deg,var(--brand-blue)_0%,#0b6ea8_52%,#06476f_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_21%_8%,rgba(255,255,255,0.14),transparent_26%),linear-gradient(90deg,var(--brand-blue)_0%,var(--brand-blue)_52%,var(--brand-blue-dark)_100%)]" />
           </div>
 
           <div className="relative grid min-h-[260px] grid-cols-1 items-center gap-4 px-5 pb-7 pt-0 sm:min-h-[285px] sm:px-8 lg:min-h-[170px] lg:grid-cols-[280px_1fr_390px] lg:gap-8 lg:px-12 lg:py-0 xl:min-h-[185px]">
@@ -36,7 +36,7 @@ const FlightCallExperts = () => {
               </p>
               <a
                 href={flightContact.phone.href}
-                className="mt-2 block text-[32px] font-[900] leading-none tracking-normal text-[var(--brand-green)] sm:text-[36px]"
+                className="mt-2 block text-[32px] font-[900] leading-none tracking-normal text-accent-on-dark sm:text-[36px]"
               >
                 {flightContact.phone.display}
               </a>

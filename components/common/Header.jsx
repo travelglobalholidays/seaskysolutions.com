@@ -50,7 +50,7 @@ const Header = () => {
               <Link
                 key={item.label}
                 href={item.href}
-                className="whitespace-nowrap transition-colors hover:text-[var(--brand-green)]"
+                className="whitespace-nowrap transition-colors hover:text-accent-strong"
               >
                 <span>{item.label}</span>
               </Link>
@@ -60,10 +60,10 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <a
               href={currentContact.phone.href}
-              className="hidden min-h-[58px] items-center justify-center gap-3 rounded-full border border-[var(--brand-blue)]/10 bg-[var(--brand-blue)]/5 px-4 text-[15px] font-[700] text-[var(--brand-blue)] transition-colors hover:border-[var(--brand-green)] hover:text-[var(--brand-green)] sm:flex lg:min-h-[66px] lg:px-5 lg:text-[18px]"
+              className="hidden min-h-[58px] items-center justify-center gap-3 rounded-full border border-[var(--brand-blue)]/10 bg-[var(--brand-blue)]/5 px-4 text-[15px] font-[700] text-[var(--brand-blue)] transition-colors hover:border-[var(--brand-green)] hover:text-accent-strong sm:flex lg:min-h-[66px] lg:px-5 lg:text-[18px]"
               aria-label={`Call toll free number ${currentContact.phone.display}`}
             >
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-green)] text-[20px] text-white lg:size-11">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-green)] text-[20px] text-accent-contrast lg:size-11">
                 <FiPhoneCall aria-hidden="true" />
               </span>
               <span className="whitespace-nowrap leading-none">
@@ -73,7 +73,7 @@ const Header = () => {
 
             <button
               type="button"
-              className="flex size-12 items-center justify-center rounded-full bg-[var(--brand-blue)] text-2xl text-white transition-colors hover:bg-[var(--brand-green)] xl:hidden"
+              className="flex size-12 items-center justify-center rounded-full bg-[var(--brand-blue)] text-2xl text-white transition-colors hover:bg-[var(--brand-green)] hover:text-accent-contrast xl:hidden"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-navigation"
@@ -102,7 +102,7 @@ const Header = () => {
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex items-center justify-between border-b border-black/10 py-3 transition-colors hover:text-[var(--brand-green)]"
+                className="flex items-center justify-between border-b border-black/10 py-3 transition-colors hover:text-accent-strong"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span>{item.label}</span>
@@ -114,7 +114,7 @@ const Header = () => {
               className="mt-5 flex min-h-[52px] w-full items-center justify-center gap-3 rounded-full border border-[var(--brand-blue)]/15 bg-[var(--brand-blue)]/5 px-5 text-[17px] font-[800] text-[var(--brand-blue)]"
               onClick={() => setIsMenuOpen(false)}
             >
-              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-green)] text-[20px] text-white">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[var(--brand-green)] text-[20px] text-accent-contrast">
                 <FiPhoneCall aria-hidden="true" />
               </span>
               <span className="whitespace-nowrap">

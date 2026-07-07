@@ -58,7 +58,7 @@ const HowItWorks = () => {
 
       <div className="site-container relative z-10 mx-auto px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-3xl text-center text-white">
-          <p className="flex items-center justify-center gap-2 text-[14px] font-[500] uppercase tracking-[0.2em] text-[var(--brand-green)]">
+          <p className="flex items-center justify-center gap-2 text-[14px] font-[500] uppercase tracking-[0.2em] text-accent-on-dark">
             <FiCompass className="text-[17px]" aria-hidden="true" />
             Let&apos;s Get Started
           </p>
@@ -86,7 +86,7 @@ const HowItWorks = () => {
                 key={step.number}
                 className="grid grid-cols-[58px_minmax(0,1fr)] items-center gap-4 rounded-[20px] border border-white/20 bg-white/8 p-4 backdrop-blur-sm sm:p-5"
               >
-                <span className="flex size-[54px] items-center justify-center rounded-full border-2 border-dashed border-[var(--brand-green)] text-[21px] font-[500] text-[var(--brand-green)]">
+                <span className="flex size-[54px] items-center justify-center rounded-full border-2 border-dashed border-accent-on-dark text-[21px] font-[500] text-accent-on-dark">
                   {step.number}
                 </span>
                 <div className="relative hidden size-[64px] items-center justify-center sm:size-[78px]">
@@ -131,7 +131,7 @@ const HowItWorks = () => {
                     className={`absolute left-0 right-0 ${detailsOnTop ? "top-0" : "bottom-0"}`}
                   >
                     <div className="flex items-start gap-3">
-                      <span className="flex size-[64px] shrink-0 items-center justify-center rounded-full border-2 border-dashed border-[var(--brand-green)] text-[25px] font-[500] text-[var(--brand-green)]">
+                      <span className="flex size-[64px] shrink-0 items-center justify-center rounded-full border-2 border-dashed border-accent-on-dark text-[25px] font-[500] text-accent-on-dark">
                         {step.number}
                       </span>
                       <div className="max-w-[245px] pt-1 xl:max-w-[265px]">

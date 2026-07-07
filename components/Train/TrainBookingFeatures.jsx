@@ -46,7 +46,7 @@ const TrainBookingFeatures = () => {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
           {features.map(({ title, description, icon: Icon }) => (
             <article key={title} className="flex items-start gap-4 text-white">
-              <span className="flex shrink-0 text-[var(--brand-green)]">
+              <span className="flex shrink-0 text-accent-on-dark">
                 <Icon className="h-[46px] w-[46px]" aria-hidden="true" />
               </span>
               <div>

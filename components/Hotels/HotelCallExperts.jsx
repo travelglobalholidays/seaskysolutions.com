@@ -23,10 +23,10 @@ const HotelCallExperts = () => {
   return (
     <section className="bg-white py-8 lg:pt-16">
       <div className="site-container px-5 sm:px-8 lg:px-12">
-        <div className="relative rounded-[7px] bg-[var(--brand-blue)] text-white shadow-[0_14px_30px_rgba(7,89,139,0.18)]">
+        <div className="relative rounded-[7px] bg-[var(--brand-blue)] text-white shadow-card">
           <div className="absolute inset-0 overflow-hidden rounded-[7px]">
             <div
-              className="absolute inset-0 bg-[radial-gradient(circle_at_21%_8%,rgba(255,255,255,0.14),transparent_26%),linear-gradient(90deg,var(--brand-blue)_0%,#0b6ea8_52%,#06476f_100%)]"
+              className="absolute inset-0 bg-[radial-gradient(circle_at_21%_8%,rgba(255,255,255,0.14),transparent_26%),linear-gradient(90deg,var(--brand-blue)_0%,var(--brand-blue)_52%,var(--brand-blue-dark)_100%)]"
               aria-hidden="true"
             />
           </div>
@@ -48,7 +48,7 @@ const HotelCallExperts = () => {
               </p>
               <a
                 href={hotelContact.phone.href}
-                className="mt-2 block text-[32px] font-[900] leading-none tracking-normal text-[var(--brand-green)] sm:text-[36px]"
+                className="mt-2 block text-[32px] font-[900] leading-none tracking-normal text-accent-on-dark sm:text-[36px]"
               >
                 {hotelContact.phone.display}
               </a>

@@ -1,7 +1,7 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
-import { createPageMetadata, siteUrl } from "@/config/siteMetadata";
 import { getPhoneDisplay, getPhoneHref } from "@/config/ContactInfo";
+import { createPageMetadata, siteUrl } from "@/config/siteMetadata";
 import { airlineSeoPages } from "@/lib/airlineSeoPages";
 import Link from "next/link";
 import {
@@ -13,17 +13,34 @@ import {
 } from "react-icons/fi";
 
 export const metadata = createPageMetadata({
-  title: "Airline Flight Booking Assistance",
+  title: "Airline Flight Information Pages",
   description:
-    "Browse Sea Sky Solutions LLC airline assistance pages for LCC, Frontier, Spirit, Allegiant, and WestJet flight booking support, fare review, baggage guidance, and itinerary planning.",
+    "Browse Sea Sky Solutions LLC airline information pages for United, Delta, American, Alaska, JetBlue, Southwest, Frontier, Spirit, Allegiant, WestJet, KLM, Lufthansa, Qatar Airways, Etihad Airways, Emirates, Air France, Air Canada, Singapore Airlines, SWISS, British Airways, Cathay Pacific, and LCC fare review, baggage guidance, route details, and itinerary planning.",
   path: "/airline",
   keywords: [
-    "airline booking assistance",
-    "LCC airline assistance",
+    "airline booking information",
+    "United Airlines flight information",
+    "Delta Air Lines flight information",
+    "American Airlines flight information",
+    "Alaska Airlines flight information",
+    "JetBlue flight information",
+    "Southwest Airlines flight information",
+    "LCC airline information",
     "Frontier flight help",
     "Spirit flight help",
     "Allegiant flight help",
     "WestJet flight help",
+    "KLM flight information",
+    "Lufthansa flight information",
+    "Qatar Airways flight information",
+    "Etihad Airways flight information",
+    "Emirates flight information",
+    "Air France flight information",
+    "Air Canada flight information",
+    "Singapore Airlines flight information",
+    "SWISS flight information",
+    "British Airways flight information",
+    "Cathay Pacific flight information",
   ],
 });
 
@@ -33,7 +50,7 @@ const AirlineListingPage = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Airline Flight Booking Assistance",
+    name: "Airline Flight Information Pages",
     description: metadata.description,
     url: `${siteUrl}/airline`,
     provider: {
@@ -57,7 +74,7 @@ const AirlineListingPage = () => {
       />
 
       <main>
-        <section className="relative isolate overflow-hidden bg-[#eef8ff]">
+        <section className="relative isolate overflow-hidden bg-blue-soft">
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-20 bg-cover bg-center"
@@ -74,22 +91,17 @@ const AirlineListingPage = () => {
 
           <div className="site-container px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
             <div className="max-w-[820px]">
-              <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)]/10 px-4 py-2 text-[12px] font-[900] uppercase tracking-[0.12em] text-[var(--brand-blue)]">
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-[var(--brand-blue)]/10 px-4 py-2 text-[12px] font-[650] uppercase tracking-[0.08em] text-[var(--brand-blue)]">
                 <FiSearch aria-hidden="true" />
-                Airline assistance directory
+                Airline information directory
               </p>
-              <h1 className="text-[42px] font-[900] uppercase leading-[1] text-[var(--brand-blue)] sm:text-[58px] lg:text-[68px]">
-                Airline Flight Booking Assistance
+              <h1 className="text-[36px] font-[700] leading-[1.08] text-[var(--brand-blue)] sm:text-[48px] lg:text-[58px]">
+                Airline Flight Information Pages
               </h1>
-              <p className="mt-5 max-w-[720px] text-[17px] font-[600] leading-8 text-slate-700 sm:text-[19px]">
-                Browse airline assistance pages for low-cost and value-focused
-                flight planning, fare review, baggage details, and booking
-                support.
-              </p>
-              <p className="mt-5 rounded-[8px] border-l-4 border-[var(--brand-green)] bg-white/90 px-4 py-3 text-[13px] font-[750] leading-6 text-[var(--brand-blue)] shadow-[0_10px_28px_rgba(7,89,139,0.08)]">
-                Sea Sky Solutions LLC is a travel assistance platform. We are
-                not affiliated with, endorsed by, or acting as any airline
-                listed on this page.
+              <p className="mt-5 max-w-[720px] text-[16px] font-[450] leading-8 text-slate-700 sm:text-[18px]">
+                Browse airline information pages for major carriers, low-cost
+                airlines, fare review, baggage details, route ideas, popular
+                destinations, and itinerary notes.
               </p>
             </div>
           </div>
@@ -99,21 +111,22 @@ const AirlineListingPage = () => {
           <div className="site-container px-5 sm:px-8 lg:px-12">
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div className="max-w-[820px]">
-                <p className="flex items-center gap-2 text-[12px] font-[900] uppercase tracking-[0.14em] text-[var(--brand-green)]">
+                <p className="flex items-center gap-2 text-[12px] font-[650] uppercase tracking-[0.1em] text-accent-strong">
                   <span className="h-px w-9 bg-[var(--brand-green)]" />
                   All airline pages
                 </p>
-                <h2 className="mt-3 text-[32px] font-[900] leading-tight text-[var(--brand-blue)] sm:text-[42px]">
-                  Choose an airline assistance page
+                <h2 className="mt-3 text-[32px] font-[750] leading-tight text-[var(--brand-blue)] sm:text-[42px]">
+                  Choose an airline information page
                 </h2>
                 <p className="mt-4 text-[16px] font-[550] leading-8 text-slate-700">
                   Each page explains useful planning points, fare review topics,
-                  baggage considerations, and booking notes for that airline or
-                  airline category.
+                  baggage considerations, popular route ideas, destination
+                  notes, and booking details for that airline or airline
+                  category.
                 </p>
               </div>
               <a
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--brand-blue)] px-5 text-[15px] font-[900] text-white transition hover:bg-[var(--brand-green)]"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--brand-blue)] px-5 text-[15px] font-[700] text-white transition hover:bg-[var(--brand-green)] hover:text-accent-contrast"
                 href={phoneHref}
               >
                 <FiPhoneCall aria-hidden="true" />
@@ -124,21 +137,21 @@ const AirlineListingPage = () => {
             <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {airlineSeoPages.map((page) => (
                 <Link
-                  className="group flex min-h-[300px] flex-col rounded-[8px] border border-[var(--brand-blue)]/12 bg-white p-6 shadow-[0_14px_32px_rgba(7,89,139,0.08)] transition hover:-translate-y-1 hover:border-[var(--brand-green)] hover:shadow-[0_20px_42px_rgba(7,89,139,0.14)]"
+                  className="group flex min-h-[300px] flex-col rounded-[8px] border border-[var(--brand-blue)]/12 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:border-[var(--brand-green)] hover:shadow-card-hover"
                   href={page.href}
                   key={page.slug}
                 >
-                  <span className="mb-5 inline-flex w-fit rounded-full bg-[var(--brand-blue)]/8 px-3 py-1.5 text-[11px] font-[900] uppercase tracking-[0.1em] text-[var(--brand-blue)]">
+                  <span className="mb-5 inline-flex w-fit rounded-full bg-[var(--brand-blue)]/8 px-3 py-1.5 text-[11px] font-[650] uppercase tracking-[0.08em] text-[var(--brand-blue)]">
                     {page.badge}
                   </span>
-                  <h3 className="text-[25px] font-[900] leading-tight text-[var(--brand-blue)]">
+                  <h3 className="text-[25px] font-[750] leading-tight text-[var(--brand-blue)]">
                     {page.label}
                   </h3>
                   <p className="mt-4 flex-1 text-[15px] font-[550] leading-7 text-slate-700">
                     {page.description}
                   </p>
-                  <span className="mt-6 inline-flex items-center gap-2 text-[15px] font-[900] text-[var(--brand-blue)] transition group-hover:text-[var(--brand-green)]">
-                    View assistance page
+                  <span className="mt-6 inline-flex items-center gap-2 text-[15px] font-[700] text-[var(--brand-blue)] transition group-hover:text-accent-strong">
+                    View airline page
                     <FiArrowRight
                       aria-hidden="true"
                       className="transition group-hover:translate-x-1"
@@ -150,23 +163,22 @@ const AirlineListingPage = () => {
           </div>
         </section>
 
-        <section className="bg-[#eef8ff] py-14">
+        <section className="bg-blue-soft py-14">
           <div className="site-container px-5 sm:px-8 lg:px-12">
             <div className="grid gap-5 lg:grid-cols-[1fr_.9fr]">
               <div className="rounded-[8px] border border-[var(--brand-blue)]/12 bg-white p-6 sm:p-8">
-                <h2 className="flex items-center gap-2 text-[26px] font-[900] text-[var(--brand-blue)]">
-                  <FiInfo className="text-[var(--brand-green)]" />
+                <h2 className="flex items-center gap-2 text-[26px] font-[750] text-[var(--brand-blue)]">
+                  <FiInfo className="text-accent-strong" />
                   How these pages are intended to help
                 </h2>
                 <p className="mt-4 text-[16px] leading-8 text-slate-700">
-                  Airline assistance pages are informational planning pages.
-                  They help travelers understand what to review when comparing
-                  routes, fares, baggage options, seats, changes, cancellations,
-                  and final booking details.
+                  Airline information pages help travelers understand what to
+                  review when comparing routes, fares, baggage options, seats,
+                  changes, cancellations, and final booking details.
                 </p>
               </div>
               <div className="rounded-[8px] border border-[var(--brand-blue)]/12 bg-white p-6 sm:p-8">
-                <h2 className="text-[26px] font-[900] text-[var(--brand-blue)]">
+                <h2 className="text-[26px] font-[750] text-[var(--brand-blue)]">
                   Transparent booking notes
                 </h2>
                 <ul className="mt-5 space-y-3 text-[15px] leading-7 text-slate-700">
@@ -177,7 +189,7 @@ const AirlineListingPage = () => {
                     "Sea Sky Solutions LLC does not guarantee lowest fare or refund approval.",
                   ].map((item) => (
                     <li className="flex gap-2" key={item}>
-                      <FiCheckCircle className="mt-1 shrink-0 text-[var(--brand-green)]" />
+                      <FiCheckCircle className="mt-1 shrink-0 text-accent-strong" />
                       <span>{item}</span>
                     </li>
                   ))}

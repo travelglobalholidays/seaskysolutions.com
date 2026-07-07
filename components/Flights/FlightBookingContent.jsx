@@ -177,17 +177,17 @@ const FlightBookingContent = () => {
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-blue/10 bg-[linear-gradient(135deg,#eef8ff,#ffffff,#f6fbec)] p-6 text-center">
+            <div className="flex flex-col items-center rounded-2xl border border-blue/10 bg-[linear-gradient(135deg,var(--surface-blue),var(--card-bg),var(--accent-soft))] p-6 text-center">
               <Clock className="mx-auto h-8 w-8 text-blue" />
               <h3 className="mt-3 font-poppins-semibold text-2xl text-heading">
                 Ready to fly?
               </h3>
-              <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 text-light-blue">
+              <p className="mx-auto mt-2 w-full max-w-2xl text-center text-sm leading-6 text-light-blue">
                 Call Sea Sky Solutions for help finding flights to the USA, Europe,
                 Asia, and more.
               </p>
               <a
-                className="mt-5 inline-flex items-center gap-2 rounded-full bg-blue px-6 py-3 font-poppins-semibold text-white transition hover:bg-blue-dark"
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-blue px-6 py-3 font-poppins-semibold text-white transition hover:bg-blue-dark"
                 href={phoneHref}
               >
                 <Phone className="h-4 w-4" />

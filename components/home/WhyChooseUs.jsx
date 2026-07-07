@@ -24,7 +24,7 @@ const benefits = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="relative isolate overflow-hidden bg-[#eef4f6] py-10 sm:py-12 lg:py-16">
+    <section className="relative isolate overflow-hidden bg-section-muted py-10 sm:py-12 lg:py-16">
       <div
         className="pointer-events-none absolute -left-16 bottom-20 h-56 w-56 rotate-[-16deg] bg-[url('/images/shapes/bg_shape_1.png')] bg-contain bg-no-repeat opacity-25"
         aria-hidden="true"
@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
       <div className="site-container relative mx-auto px-5 sm:px-8 lg:px-12">
         <div className="relative mx-auto max-w-[1180px] lg:pr-[270px] xl:pr-[285px]">
           <div className="max-w-3xl">
-            <p className="flex items-center gap-2 text-[14px] font-[500] uppercase tracking-[0.2em] text-[var(--brand-green)]">
+            <p className="flex items-center gap-2 text-[14px] font-[500] uppercase tracking-[0.2em] text-accent-strong">
               <FiCompass className="text-[18px]" aria-hidden="true" />
               Why Sea Sky Solutions LLC
             </p>
@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
                 key={title}
                 className="min-h-[225px] rounded-[21px] border border-[var(--brand-blue)]/15  bg-white p-5 sm:p-6"
               >
-                <span className="flex size-12 items-center justify-center rounded-full bg-[var(--brand-blue)]/8 text-[22px] text-[var(--brand-green)]">
+                <span className="flex size-12 items-center justify-center rounded-full bg-[var(--brand-blue)]/8 text-[22px] text-accent-strong">
                   <Icon aria-hidden="true" />
                 </span>
                 <h3 className="mt-2 text-[16px] font-[500] leading-6 text-[var(--brand-blue)]">

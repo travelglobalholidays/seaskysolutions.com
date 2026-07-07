@@ -16,7 +16,7 @@ const LoadingState = () => (
     <div className="flex min-h-[60vh] items-center justify-center">
       <div className="text-center">
         <Loader2 className="mx-auto size-10 animate-spin text-blue" />
-        <p className="mt-4 text-sm font-poppins-medium text-light-grey">
+        <p className="mt-4 text-sm font-poppins-medium text-light">
           Loading booking details...
         </p>
       </div>
@@ -71,7 +71,7 @@ export default function BookingPage() {
       <Header />
       <main className="min-h-screen bg-light-grey py-8">
         <div className="container">
-          <div className="mb-5 text-sm text-light-grey">
+          <div className="mb-5 text-sm text-light">
             Booking / <span className="text-heading">Review & Complete</span>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">

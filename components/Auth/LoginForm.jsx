@@ -50,7 +50,7 @@ export default function LoginForm() {
         <h1 className="mt-6 font-poppins-semibold text-2xl text-heading">
           Welcome Back
         </h1>
-        <p className="mt-2 text-sm text-light-grey">
+        <p className="mt-2 text-sm text-light">
           Sign in to continue your flight booking.
         </p>
       </div>
@@ -72,7 +72,7 @@ export default function LoginForm() {
             Email Address
           </span>
           <span className={inputWrap}>
-            <Mail className="mr-2 size-4 text-light-grey" />
+            <Mail className="mr-2 size-4 text-light" />
             <input
               className="w-full bg-transparent text-sm text-heading outline-none"
               name="email"
@@ -94,7 +94,7 @@ export default function LoginForm() {
             Password
           </span>
           <span className={inputWrap}>
-            <Lock className="mr-2 size-4 text-light-grey" />
+            <Lock className="mr-2 size-4 text-light" />
             <input
               className="w-full bg-transparent text-sm text-heading outline-none"
               name="password"
@@ -121,7 +121,7 @@ export default function LoginForm() {
         </button>
       </form>
 
-      <p className="mt-6 text-center text-sm text-light-grey">
+      <p className="mt-6 text-center text-sm text-light">
         Do not have an account?{" "}
         <Link className="font-poppins-semibold text-blue" href="/register">
           Create one

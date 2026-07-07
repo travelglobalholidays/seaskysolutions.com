@@ -1,3 +1,4 @@
+import AirlineLinksDirectory from "@/components/AirlineSeo/AirlineLinksDirectory";
 import FareOffersGrid from "@/components/Flights/FareOffersGrid";
 import FlightBanner from "@/components/Flights/FlightBanner";
 import FlightBookingContent from "@/components/Flights/FlightBookingContent";
@@ -13,6 +14,7 @@ import TopDestinationsCarousel from "@/components/Flights/TopDestinationsCarouse
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import { createPageMetadata } from "@/config/siteMetadata";
+import { airlineSeoPages } from "@/lib/airlineSeoPages";
 
 export const metadata = createPageMetadata({
   title: "Flight Booking Assistance | One Way, Round Trip & Multi City",
@@ -49,6 +51,7 @@ const FlightsPage = () => {
       <FlightBookingWhyUs />
       <FlightPopularDestinations />
       <FlightBookingContent />
+      <AirlineLinksDirectory pages={airlineSeoPages} />
       <FlightCallExperts />
       <FlightTestimonials />
       <Footer />

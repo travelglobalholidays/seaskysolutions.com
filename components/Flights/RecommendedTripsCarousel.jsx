@@ -139,7 +139,7 @@ const AirlineBadge = ({ airline, airlineLogo }) => (
 const TripCard = ({ disabled, onSearch, trip }) => (
   <button
     aria-label={`Search ${trip.origin} to ${trip.destination} flights`}
-    className="group flex h-full min-h-[150px] w-full items-center gap-4 rounded-[18px] border border-white/80 bg-white/95 px-4 py-3 text-left shadow-[0_10px_28px_rgba(7,89,139,0.08)] backdrop-blur transition-all duration-300 hover:border-blue/25 hover:shadow-[0_18px_34px_rgba(7,89,139,0.15)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue disabled:pointer-events-none disabled:opacity-70"
+    className="group flex h-full min-h-[150px] w-full items-center gap-4 rounded-[18px] border border-white/80 bg-white/95 px-4 py-3 text-left shadow-card backdrop-blur transition-all duration-300 hover:border-blue/25 hover:shadow-card-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue disabled:pointer-events-none disabled:opacity-70"
     disabled={disabled}
     onClick={() => onSearch(trip)}
     type="button"
@@ -149,26 +149,26 @@ const TripCard = ({ disabled, onSearch, trip }) => (
     <div className="min-w-0 flex-1">
       <div className="flex items-start gap-3">
         <div>
-          <p className="text-[11px] text-light-grey">From</p>
+          <p className="text-[11px] text-light">From</p>
           <p className="mt-0.5 font-poppins-semibold text-lg text-blue">
             {trip.origin}
           </p>
         </div>
 
         <div className="relative mt-5 flex min-w-10 flex-1 items-center">
-          <span className="size-2 shrink-0 rounded-full bg-[#d7d9dc]" />
-          <span className="h-px flex-1 bg-[#d7d9dc]" />
+          <span className="size-2 shrink-0 rounded-full bg-border-strong" />
+          <span className="h-px flex-1 bg-border-strong" />
           <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-blue text-white">
             <PlaneIcon />
           </span>
-          <span className="h-px flex-1 bg-[#d7d9dc]" />
-          <span className="flex size-3 shrink-0 items-center justify-center rounded-full border border-[#8d9499]">
-            <span className="size-1.5 rounded-full bg-[#8d9499]" />
+          <span className="h-px flex-1 bg-border-strong" />
+          <span className="flex size-3 shrink-0 items-center justify-center rounded-full border border-icon-muted">
+            <span className="size-1.5 rounded-full bg-icon-muted" />
           </span>
         </div>
 
         <div className="text-right">
-          <p className="text-[11px] text-light-grey">To</p>
+          <p className="text-[11px] text-light">To</p>
           <p className="mt-0.5 font-poppins-semibold text-lg text-blue">
             {trip.destination}
           </p>
@@ -179,7 +179,7 @@ const TripCard = ({ disabled, onSearch, trip }) => (
 
       <div className="flex items-end justify-between gap-3">
         <div>
-          <p className="text-[11px] text-light-grey">Date</p>
+          <p className="text-[11px] text-light">Date</p>
           <p className="mt-0.5 text-xs font-poppins-semibold text-heading">
             {trip.date}
           </p>
@@ -188,7 +188,7 @@ const TripCard = ({ disabled, onSearch, trip }) => (
           <p className="font-poppins-semibold text-2xl leading-none text-heading">
             {currencySymbol} {trip.price}
           </p>
-          <p className="mt-1 text-[11px] text-light-grey">Per Person</p>
+          <p className="mt-1 text-[11px] text-light">Per Person</p>
         </div>
       </div>
     </div>
@@ -210,7 +210,7 @@ const RecommendedTripsCarousel = () => {
 
   return (
     <section
-      className="soft-grid relative overflow-hidden bg-[linear-gradient(135deg,#eef8ff_0%,#ffffff_58%,#f6fbec_100%)] py-12 sm:py-14"
+      className="soft-grid relative overflow-hidden bg-[linear-gradient(135deg,var(--surface-blue)_0%,var(--card-bg)_58%,var(--accent-soft)_100%)] py-12 sm:py-14"
       id="featured-fares"
     >
       <DealSearchOverlay deal={searchingDeal} />
@@ -226,7 +226,7 @@ const RecommendedTripsCarousel = () => {
             <h2 className="mt-2 font-poppins-semibold text-[34px] leading-tight text-heading sm:text-[42px]">
               Popular fares to start your search
             </h2>
-            <p className="mt-2 text-sm text-light-grey sm:text-base">
+            <p className="mt-2 text-sm text-light sm:text-base">
               Browse route examples and jump straight into live availability.
             </p>
           </div>
@@ -234,7 +234,7 @@ const RecommendedTripsCarousel = () => {
           <div className="flex items-center gap-2">
             <button
               aria-label="Previous recommended trip"
-              className="flex size-11 items-center justify-center rounded-full border border-blue bg-white text-blue transition-colors hover:bg-blue hover:text-white disabled:cursor-not-allowed disabled:border-subtle disabled:text-light-grey disabled:hover:bg-white"
+              className="flex size-11 items-center justify-center rounded-full border border-blue bg-white text-blue transition-colors hover:bg-blue hover:text-white disabled:cursor-not-allowed disabled:border-subtle disabled:text-disabled disabled:hover:bg-white"
               disabled={isBeginning}
               onClick={() => carousel?.slidePrev()}
               type="button"
@@ -243,7 +243,7 @@ const RecommendedTripsCarousel = () => {
             </button>
             <button
               aria-label="Next recommended trip"
-              className="flex size-11 items-center justify-center rounded-full border border-blue bg-white text-blue transition-colors hover:bg-blue hover:text-white disabled:cursor-not-allowed disabled:border-subtle disabled:text-light-grey disabled:hover:bg-white"
+              className="flex size-11 items-center justify-center rounded-full border border-blue bg-white text-blue transition-colors hover:bg-blue hover:text-white disabled:cursor-not-allowed disabled:border-subtle disabled:text-disabled disabled:hover:bg-white"
               disabled={isEnd}
               onClick={() => carousel?.slideNext()}
               type="button"

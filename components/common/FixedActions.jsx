@@ -29,7 +29,7 @@ const FixedActions = () => {
     <>
       <a
         href={currentContact.phone.href}
-        className={`group fixed bottom-4 left-1/2 z-50 inline-flex min-h-12 -translate-x-1/2 items-center gap-2 rounded-full bg-[var(--brand-green)] py-1.5 pl-2 pr-4 text-[14px] font-[800] text-white shadow-[0_12px_28px_rgba(4,50,82,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand-blue)] focus:outline-none focus:ring-4 focus:ring-[var(--brand-green)]/35 sm:bottom-6 sm:min-h-14 sm:gap-3 sm:pl-2.5 sm:pr-5 sm:text-[16px] ${
+        className={`group fixed bottom-4 left-1/2 z-50 inline-flex min-h-12 -translate-x-1/2 items-center gap-2 rounded-full bg-[var(--brand-green)] py-1.5 pl-2 pr-4 text-[14px] font-[800] text-accent-contrast shadow-button transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand-blue)] hover:text-white focus:outline-none focus:ring-4 focus:ring-[var(--brand-green)]/35 sm:bottom-6 sm:min-h-14 sm:gap-3 sm:pl-2.5 sm:pr-5 sm:text-[16px] ${
         isVisible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-5 opacity-0"
@@ -37,7 +37,7 @@ const FixedActions = () => {
         aria-label={`Call Sea Sky Solutions LLC at ${currentContact.phone.display}`}
         tabIndex={isVisible ? 0 : -1}
       >
-        <span className="flex size-9 items-center justify-center rounded-full bg-white text-[18px] text-[var(--brand-green)] transition-colors group-hover:text-[var(--brand-blue)] sm:size-10 sm:text-[20px]">
+        <span className="flex size-9 items-center justify-center rounded-full bg-white text-[18px] text-accent-strong transition-colors group-hover:text-[var(--brand-blue)] sm:size-10 sm:text-[20px]">
           <FiPhoneCall aria-hidden="true" />
         </span>
         <span className="whitespace-nowrap">
@@ -48,7 +48,7 @@ const FixedActions = () => {
       <button
         type="button"
         onClick={scrollToTop}
-        className={`fixed bottom-20 right-4 z-50 flex size-12 items-center justify-center rounded-full border border-white/30 bg-[var(--brand-blue)] text-[22px] text-white shadow-[0_12px_28px_rgba(4,50,82,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand-green)] focus:outline-none focus:ring-4 focus:ring-[var(--brand-blue)]/25 sm:bottom-6 sm:right-6 sm:size-14 sm:text-[24px] ${
+        className={`fixed bottom-20 right-4 z-50 flex size-12 items-center justify-center rounded-full border border-white/30 bg-[var(--brand-blue)] text-[22px] text-white shadow-button transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand-green)] hover:text-accent-contrast focus:outline-none focus:ring-4 focus:ring-[var(--brand-blue)]/25 sm:bottom-6 sm:right-6 sm:size-14 sm:text-[24px] ${
           isVisible
             ? "translate-y-0 opacity-100"
             : "pointer-events-none translate-y-5 opacity-0"
