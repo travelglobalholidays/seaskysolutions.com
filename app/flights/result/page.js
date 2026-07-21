@@ -9,7 +9,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import NoFlightsFound from "@/components/ResultComponent/NoResult";
 import { useRouter } from "next/navigation";
 import { getPhoneByLanguage, getPhoneHref } from "@/config/ContactInfo";
-import { decryptSearchParams } from "@/lib/encryption";
+import { parseFlightSearchParams } from "@/lib/flightSearchUrl";
 import axiosInstance from "@/lib/axiosInstance";
 
 export default function ResultPage() {
@@ -51,11 +51,7 @@ export default function ResultPage() {
   useEffect(() => {
     if (restoredSearchRef.current || (results && results.length > 0)) return;
 
-    const searchParams = new URLSearchParams(window.location.search);
-    const encryptedQuery = searchParams.get("q");
-    if (!encryptedQuery) return;
-
-    const restoredSearchData = decryptSearchParams(encryptedQuery);
+    const restoredSearchData = parseFlightSearchParams(window.location.search);
     if (!restoredSearchData) return;
 
     restoredSearchRef.current = true;

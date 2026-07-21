@@ -2,7 +2,7 @@
 
 import { useFlight } from "@/context/FlightContext";
 import axiosInstance from "@/lib/axiosInstance";
-import { encryptSearchParams } from "@/lib/encryption";
+import { buildFlightResultUrl } from "@/lib/flightSearchUrl";
 import airportData from "@/public/data/airports.json";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -796,8 +796,7 @@ const SearchForm = ({ initialValues = {}, isResultsPage = false }) => {
       setResults(flightOffers);
       setSearchData(searchData);
 
-      const encryptedQuery = encryptSearchParams(searchData);
-      router.push(`/flights/result?q=${encryptedQuery}`);
+      router.push(buildFlightResultUrl(searchData));
     } catch (error) {
       console.error("Search error:", error);
       const message =

@@ -10,9 +10,10 @@ const ResultBanner = () => {
     : "empty-search";
 
   return (
-    <section className="relative isolate bg-[var(--brand-blue)] px-4 py-8">
-      <div className="absolute inset-x-0 top-0 -z-10 h-full bg-[linear-gradient(105deg,rgba(7,89,139,0.96),rgba(7,89,139,0.86),rgba(168,201,70,0.42))]" />
-      <div className="site-container">
+    <section className="relative isolate overflow-hidden bg-blue px-4 py-7 sm:py-8">
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,rgba(7,89,139,0.98),rgba(6,70,111,0.94),rgba(168,201,70,0.34))]" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-px bg-white/20" />
+      <div className="container">
         <SearchForm
           initialValues={searchData || {}}
           isResultsPage

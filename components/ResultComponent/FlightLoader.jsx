@@ -134,7 +134,7 @@ export default function FlightSearchLoader({
         <div className="mt-8">
           <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 transition-all duration-300"
+              className="h-full bg-gradient-to-r from-green to-blue transition-all duration-300"
               style={{ width: `${progress}%` }}
             ></div>
           </div>

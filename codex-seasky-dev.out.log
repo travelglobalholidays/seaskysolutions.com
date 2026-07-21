@@ -1,0 +1,12 @@
+
+> seaskysolutions.com@0.1.0 dev
+> next dev -p 3002
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3002
+- Network:       http://192.168.1.48:3002
+- Environments: .env
+✓ Ready in 1118ms
+Creating turbopack project { dir: 'D:\\Seaskysoluitions', testMode: true }
+
+ GET /flights/result?from=DEN&to=JFK&depart=2026-07-28&trip=oneway&adults=1&cabin=economy 200 in 1188ms (next.js: 433ms, application-code: 755ms)

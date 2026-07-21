@@ -205,7 +205,7 @@ export default function FlightFilterSidebar() {
   );
 
   const filterSectionClass =
-    "rounded-xl border border-blue/10 bg-white px-3.5 py-3 shadow-card";
+    "rounded-lg border border-border bg-white px-3.5 py-3 shadow-sm";
   const sectionToggleClass =
     "mb-2 flex w-full items-center justify-between gap-3 text-left";
 
@@ -480,10 +480,10 @@ export default function FlightFilterSidebar() {
           overflow-y-auto md:overflow-visible max-h-[100dvh] md:max-h-none shadow-2xl md:shadow-none
         `}
       >
-        <Card className="min-h-[100dvh] rounded-none border-0 border-r border-subtle bg-white shadow-none md:min-h-0 md:rounded-xl md:border md:border-blue/10 md:bg-light-grey md:shadow-theme">
+        <Card className="min-h-[100dvh] rounded-none border-0 border-r border-subtle bg-white shadow-none md:min-h-0 md:rounded-lg md:border md:border-border md:bg-white md:shadow-card">
           <CardContent className="space-y-3 p-4 md:p-4">
             {/* Header with Close Button */}
-            <div className="rounded-xl border border-blue/10 bg-blue-soft p-3">
+            <div className="rounded-lg border border-blue/10 bg-blue-soft p-3">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue shadow-button">
@@ -501,14 +501,14 @@ export default function FlightFilterSidebar() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={clearAllFilters}
-                    className="flex items-center gap-1 rounded-lg border border-blue/15 bg-white px-2.5 py-1.5 text-xs font-poppins-semibold text-blue transition hover:border-blue/35 hover:bg-white/80"
+                    className="flex items-center gap-1 rounded-lg border border-blue/15 bg-white px-2.5 py-1.5 text-xs font-poppins-semibold text-blue transition hover:border-green hover:bg-accent-soft"
                   >
                     <X className="w-3 h-3" />
                     Clear
                   </button>
                   <button
                     onClick={() => setIsMobileOpen(false)}
-                    className="md:hidden p-1 hover:bg-gray-100 rounded"
+                    className="rounded p-1 hover:bg-blue-soft md:hidden"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>

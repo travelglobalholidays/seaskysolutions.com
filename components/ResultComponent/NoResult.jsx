@@ -87,8 +87,8 @@ export default function NoFlightsFound({ agencyName = "Sea Sky Solutions" }) {
           </div>
 
           <div className="bg-white p-4 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-            <div className="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <Users className="w-6 h-6 text-purple-600" />
+            <div className="bg-accent-soft w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <Users className="w-6 h-6 text-green-strong" />
             </div>
             <h3 className="font-semibold text-gray-800 mb-2">{t.expertHelp}</h3>
             <p className="text-sm text-gray-600">{t.expertHelpDesc}</p>

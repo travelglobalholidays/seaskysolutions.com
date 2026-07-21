@@ -1,7 +1,7 @@
 "use client";
 
 import { useFlight } from "@/context/FlightContext";
-import { encryptSearchParams } from "@/lib/encryption";
+import { buildFlightResultUrl } from "@/lib/flightSearchUrl";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -95,8 +95,7 @@ export const useFlightDealSearch = () => {
     setFilteredResults([]);
     setSearchData(searchData);
 
-    const encryptedQuery = encryptSearchParams(searchData);
-    router.push(`/flights/result?q=${encryptedQuery}`);
+    router.push(buildFlightResultUrl(searchData));
   };
 
   return {

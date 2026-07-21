@@ -1,7 +1,6 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { useAuth } from "@/context/AuthContext";
 import { useFlight } from "@/context/FlightContext";
 import axiosInstance from "@/lib/axiosInstance";
 import airportData from "@/public/data/airports.json";
@@ -17,24 +16,19 @@ import {
   Utensils,
   Wifi,
 } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useCallback, useMemo, useState } from "react";
 import NoFlightsFound from "./NoResult";
 
 export default function FlightCard() {
   const [expandedCard, setExpandedCard] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [loadingFlightId, setLoadingFlightId] = useState(null);
+  const [bookingError, setBookingError] = useState("");
   const [imageErrors, setImageErrors] = useState({});
-  const [isBookingAuthChecking, setIsBookingAuthChecking] = useState(false);
-  const pendingBookingProcessed = useRef(false);
 
   const flightsPerPage = 12;
   const router = useRouter();
-  const pathname = usePathname();
-
-  // Get auth state
-  const { user, loading: authLoading } = useAuth();
 
   const {
     results = [],
@@ -239,54 +233,14 @@ export default function FlightCard() {
     return { cabin, checked };
   }, []);
 
-  // Handle booking - Now with proper auth check
+  // Handle booking
   const handleBookNow = async (flight) => {
     try {
-      setIsBookingAuthChecking(true);
-
-      // Set loading state for this flight
       const flightKey = flight.id || flight.offerId || "selected-flight";
       setLoadingFlightId(flightKey);
+      setBookingError("");
+      setSelectedFlight?.(flight);
 
-      // Check if user is authenticated by checking token
-      const token = localStorage.getItem("token");
-
-      if (!token) {
-        // console.log("No token found, redirecting to login");
-        sessionStorage.setItem(
-          "pendingBooking",
-          JSON.stringify({
-            flight: flight,
-          }),
-        );
-        sessionStorage.setItem("redirectAfterLogin", pathname);
-        router.push("/login");
-        return;
-      }
-
-      // Verify token is valid by making a quick request
-      try {
-        await axiosInstance.get("/auth/me", {
-          timeout: 3000,
-        });
-      } catch (authErr) {
-        // console.log("Token validation failed:", authErr.response?.status);
-        // Clear invalid token
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-
-        sessionStorage.setItem(
-          "pendingBooking",
-          JSON.stringify({
-            flight: flight,
-          }),
-        );
-        sessionStorage.setItem("redirectAfterLogin", pathname);
-        router.push("/login");
-        return;
-      }
-
-      // Authenticated - proceed with booking
       const res = await axiosInstance.post("/bookings/draft", {
         offer: flight,
       });
@@ -294,58 +248,22 @@ export default function FlightCard() {
       const bookingId = res?.data?.data?._id;
       if (bookingId) {
         router.push(`/booking/${bookingId}`);
+        return;
       }
+
+      throw new Error("Booking draft was not returned by the server.");
     } catch (err) {
       console.error("Booking error:", err.response?.data || err.message);
-
-      // Handle 401 specifically
-      if (err.response?.status === 401) {
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-
-        sessionStorage.setItem(
-          "pendingBooking",
-          JSON.stringify({
-            flight: flight,
-          }),
-        );
-        router.push("/login");
-      }
+      setBookingError(
+        err.response?.data?.message ||
+          err.response?.data?.error ||
+          err.message ||
+          "Unable to start booking. Please try again.",
+      );
     } finally {
       setLoadingFlightId(null);
-      setIsBookingAuthChecking(false);
     }
   };
-
-  // Update the pending booking useEffect
-  useEffect(() => {
-    const processPendingBooking = async () => {
-      // Check if we have a token
-      const token = localStorage.getItem("token");
-      if (!token) return;
-
-      const pendingBooking = sessionStorage.getItem("pendingBooking");
-      if (!pendingBooking) return;
-
-      try {
-        sessionStorage.removeItem("pendingBooking");
-        const { flight } = JSON.parse(pendingBooking);
-
-        const res = await axiosInstance.post("/bookings/draft", {
-          offer: flight,
-        });
-
-        const bookingId = res?.data?.data?._id;
-        if (bookingId) {
-          router.push(`/booking/${bookingId}`);
-        }
-      } catch (err) {
-        console.error("Error processing pending booking:", err);
-      }
-    };
-
-    processPendingBooking();
-  }, [router]);
 
   // Pagination
   const indexOfLastFlight = currentPage * flightsPerPage;
@@ -430,6 +348,12 @@ export default function FlightCard() {
 
   return (
     <section className=" mx-auto max-w-full space-y-4 overflow-hidden sm:space-y-6">
+      {bookingError && (
+        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-poppins-medium text-red-700">
+          {bookingError}
+        </div>
+      )}
+
       {currentFlights.map((flight, index) => {
         const flightId = flight.id || `flight-${index}`;
         const isBookingLoading = loadingFlightId === flightId;
@@ -473,7 +397,7 @@ export default function FlightCard() {
         return (
           <Card
             key={flightId}
-            className="overflow-hidden border border-gray-100 rounded-xl  hover:shadow-lg transition-all duration-300 bg-white group px-4 py-2"
+            className="group overflow-hidden rounded-lg border border-border bg-white px-4 py-2 shadow-card transition-all duration-300 hover:shadow-card-hover"
           >
             <CardContent className="p-0">
               <div className="grid min-w-0 grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_280px]">
@@ -482,17 +406,17 @@ export default function FlightCard() {
                   {/* ===== TOP BADGES ===== */}
                   <div className="flex flex-wrap gap-1.5">
                     {isCheapest && (
-                      <span className="bg-green-600 text-white text-[10px] px-2.5 py-1 rounded-full font-semibold">
+                      <span className="rounded-full bg-green px-2.5 py-1 text-[10px] font-semibold text-white">
                         Cheapest
                       </span>
                     )}
                     {isFastest && (
-                      <span className="bg-blue-600 text-white text-[10px] px-2.5 py-1 rounded-full font-semibold">
+                      <span className="rounded-full bg-blue px-2.5 py-1 text-[10px] font-semibold text-white">
                         Fastest
                       </span>
                     )}
                     {isBestValue && (
-                      <span className="bg-purple-600 text-white text-[10px] px-2.5 py-1 rounded-full font-semibold">
+                      <span className="rounded-full bg-accent-soft px-2.5 py-1 text-[10px] font-semibold text-heading">
                         Best Value
                       </span>
                     )}
@@ -663,14 +587,14 @@ export default function FlightCard() {
                       );
                     })()}
 
-                    <span className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">
-                      Est. CO₂: {flight.total_emissions_kg || 0} kg
+                    <span className="rounded-full bg-blue-soft px-3 py-1 text-xs font-medium text-blue">
+                      Est. CO2: {flight.total_emissions_kg || 0} kg
                     </span>
                   </div>
                 </div>
 
                 {/* RIGHT PRICE */}
-                <div className="flex min-w-0 flex-col items-center justify-center space-y-3 border-t border-gray-100 pt-4 text-center lg:border-l lg:border-t-0 lg:pt-0 lg:pl-6">
+                <div className="flex min-w-0 flex-col items-center justify-center space-y-3 border-t border-border pt-4 text-center lg:border-l lg:border-t-0 lg:pt-0 lg:pl-6">
                   <div className="max-w-full space-y-2">
                     <p className="break-words text-2xl font-bold text-theme">
                       {flight.total_currency} {totalPrice}
@@ -707,7 +631,7 @@ export default function FlightCard() {
 
                   <button
                     onClick={() => handleBookNow(flight)}
-                    disabled={isBookingLoading || isBookingAuthChecking}
+                    disabled={isBookingLoading}
                     className="w-full bg-theme hover:bg-hover-dark text-white font-semibold py-3 px-4 rounded-lg text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isBookingLoading ? "Processing..." : "Book Now"}
@@ -717,7 +641,7 @@ export default function FlightCard() {
 
               {/* Expand Section */}
               <div
-                className="border-t border-gray-100 bg-gray-50/50 px-2 py-3 cursor-pointer hover:bg-gray-100 transition-all"
+                className="cursor-pointer border-t border-border bg-blue-soft/45 px-2 py-3 transition-all hover:bg-blue-soft"
                 onClick={() =>
                   setExpandedCard(expandedCard === index ? null : index)
                 }
@@ -736,9 +660,9 @@ export default function FlightCard() {
 
               {/* Expanded Details */}
               {expandedCard === index && (
-                <div className="border-t border-gray-100 bg-gray-50/30 px-2 py-4 space-y-4">
+                <div className="space-y-4 border-t border-border bg-light-grey/55 px-2 py-4">
                   {/* FARE SUMMARY */}
-                  <div className="bg-white border border-gray-100 rounded-lg p-4 text-sm">
+                  <div className="rounded-lg border border-border bg-white p-4 text-sm">
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                       <div>
                         <p className="text-light text-xs">Total</p>
@@ -759,7 +683,7 @@ export default function FlightCard() {
                         </p>
                       </div>
                       <div>
-                        <p className="text-light text-xs">CO₂</p>
+                        <p className="text-light text-xs">CO2</p>
                         <p className="text-dark">
                           {flight.total_emissions_kg || 0} kg
                         </p>
