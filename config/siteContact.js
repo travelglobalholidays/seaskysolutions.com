@@ -9,8 +9,8 @@ export const serviceContacts = {
   carRental: {
     label: "Car Rental",
     phone: {
-      display: "+1 (888) 385-0753",
-      href: "tel:+18883850753",
+      display: "+1 (000) 000-0000",
+      href: "tel:+10000000000",
     },
   },
   trainBooking: {
